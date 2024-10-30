@@ -3,7 +3,7 @@
 It is automatically transformed by [Jekyll](http://github.com/jekyll/jekyll)
 into a static site whenever I push this repository to GitHub.
 
-The website is built using a Jekyll theme called [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy).
+The website is built using a Jekyll theme called [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) by Cotes Chung.
 
 ## License
 

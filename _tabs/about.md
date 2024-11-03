@@ -7,15 +7,15 @@ order: 4
 
 # About Me
 
-👋 Hello! I’m Supreeth Mysore Venkatesh, a Quantum AI researcher driven by the possibilities of quantum computing and its applications in data-intensive fields like earth observation, game theory, and finance.
+👋 Hi! I'm Supreeth Mysore Venkatesh, a quantum AI researcher passionate about the potential of quantum computing to revolutionize data-heavy fields like earth observation, game theory, and finance.
 
-With a PhD underway in Computer Science at RPTU Kaiserslautern-Landau, my journey has been nothing short of a deep dive into the world of algorithms and complex problem-solving. During my Master’s at Saarland University, I cultivated a strong foundation in mathematics and computer science, navigating diverse research projects and working closely with renowned institutes like the German Research Center for Artificial Intelligence (DFKI).
+I'm currently pursuing my PhD in Computer Science at Technical University of Kaiserslautern, where I'm delving deep into developing and benchmarking quantum algorithms against classical state-of-the-art methods for solving computationally expensive problems. My Master's degree from Saarland University provided a solid foundation in mathematics and computer science. I've had the opportunity to work on various research projects and collaborate with prestigious institutions like the German Research Center for Artificial Intelligence (DFKI).
 
 ### 🔬What I’m Passionate About
-Building systematic approaches to quantum software that align with rapid advances in quantum computing. I have developed novel quantum algorithms and exploring the feasibility of exisiting and near-term quantum computers for complex tasks in AI.
+I'm dedicated to developing systematic approaches for quantum software that can keep pace with the rapid evolution of quantum computing. My research focuses on creating innovative quantum algorithms and assessing the potential of current and near-future quantum computers to handle complex AI tasks.
 
 ### 💡 Why This Blog?
-This blog serves as a bridge between my research and the broader community. Here, I dive into concepts like quantum neural networks, financial quantum algorithms, and satellite coalition theory—breaking them down to make these complex ideas accessible and engaging for readers of all backgrounds.
+This blog serves as a bridge between my research and the broader community. Here, I dive into concepts like quantum neural networks and quantum algorithms for complex problems in AI, breaking them down to make these complex ideas accessible and engaging for readers of all backgrounds.
 
 Feel free to reach out if our interests align or if you have a curiosity in the world of Quantum AI.
 

@@ -15,7 +15,7 @@ I'm currently pursuing my PhD in Computer Science at Technical University of Kai
 I'm dedicated to developing systematic approaches for quantum software that can keep pace with the rapid evolution of quantum computing. My research focuses on creating innovative quantum algorithms and assessing the potential of current and near-future quantum computers to handle complex AI tasks.
 
 ### 💡 Why This Blog?
-This blog serves as a bridge between my research and the broader community. Here, I dive into concepts like quantum neural networks and quantum algorithms for complex problems in AI, breaking them down to make these complex ideas accessible and engaging for readers of all backgrounds.
+This blog serves as a bridge between my research and the broader community. Here, I dive into concepts like quantum neural networks and quantum algorithms for complex problems, breaking them down to make these complex ideas accessible and engaging for readers of all backgrounds.
 
 Feel free to reach out if our interests align or if you have a curiosity in the world of Quantum AI.
 

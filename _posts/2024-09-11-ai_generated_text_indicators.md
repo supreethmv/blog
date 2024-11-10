@@ -41,7 +41,7 @@ AI-generated content sounds like it’s aiming for that A+ essay. Humans? We sou
 Ever notice how some writing has this steady, almost hypnotic flow? Like, every sentence is just the right length, with perfect punctuation. It’s like listening to a song where every note is perfectly on beat. That’s AI. Humans, on the other hand, will throw in a short sentence. Then ramble on in a long, chaotic one that’s borderline a brain dump, you know, just to keep things interesting.
 
 **Example:**
-- *AI-generated*: “The importance of regular exercise cannot be overstated, as it plays a pivotal role in maintaining both physical and mental health.”
+- *AI-generated*: “The importance of regular exercise cannot be overstated, as it plays a pivotal role in maintaining not only physical, but also mental health.”
 - *Human-written*: “Exercise is good. It helps you stay healthy and sane, you know? Plus, it’s free therapy.”
 - **More Examples**:
    - *AI*: “Effective time management strategies include prioritizing tasks and setting realistic goals.”

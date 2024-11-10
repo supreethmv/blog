@@ -26,11 +26,12 @@ So, how can you spot these machine-crafted bits of text? Well, grab your coffee 
 You know how humans write, sometimes we mess up a bit, maybe toss in a random comma or run on with a thought until we forget the point. AI? Nah, it’s got that spotless, essay-level polish your English teacher dreamed of. If the piece you’re reading sounds like it’s been edited by a robot with OCD, that’s your first clue.
 
 **What it looks like:**
-- *AI-generated*: “It is essential to recognize that achieving balance in one’s daily routine contributes significantly to personal well-being.”
-- *Human-written*: “Balancing your daily routine helps. Seriously, it makes a difference.”
-- **More Examples**:
-   - *AI*: “The intricacies of the ecosystem must be understood for meaningful preservation.”
-   - *Human*: “Yeah, nature’s complicated, but we gotta save it.”
+1. *AI*: “It is essential to recognize that achieving balance in one’s daily routine contributes significantly to personal well-being.”
+   
+   *Human*: “Balancing your daily routine helps. Seriously, it makes a difference.”
+2. *AI*: “The intricacies of the ecosystem must be understood for meaningful preservation.”
+   
+   *Human*: “Yeah, nature’s complicated, but we gotta save it.”
 
 AI-generated content sounds like it’s aiming for that A+ essay. Humans? We sound more like, “Eh, this should do.”
 
@@ -40,24 +41,28 @@ AI-generated content sounds like it’s aiming for that A+ essay. Humans? We sou
 ### Balanced and Predictable Sentences
 Ever notice how some writing has this steady, almost hypnotic flow? Like, every sentence is just the right length, with perfect punctuation. It’s like listening to a song where every note is perfectly on beat. That’s AI. Humans, on the other hand, will throw in a short sentence. Then ramble on in a long, chaotic one that’s borderline a brain dump, you know, just to keep things interesting.
 
-**Example:**
-- *AI-generated*: “The importance of regular exercise cannot be overstated, as it plays a pivotal role in maintaining not only physical but also mental health.”
-- *Human-written*: “Exercise is good. It helps you stay healthy and sane, you know? Plus, it’s free therapy.”
-- **More Examples**:
-   - *AI*: “Effective time management strategies include prioritizing tasks and setting realistic goals.”
-   - *Human*: “Want to get stuff done? Pick the urgent things and don’t go nuts with your to-do list.”
+**Examples:**
+
+1. *AI*: “The importance of regular exercise cannot be overstated, as it plays a pivotal role in maintaining not only physical but also mental health.”
+
+    *Human*: “Exercise is good. It helps you stay healthy and sane, you know? Plus, it’s free therapy.”
+
+2. *AI*: “Effective time management strategies include prioritizing tasks and setting realistic goals.”
+
+    *Human*: “Want to get stuff done? Pick the urgent things and don’t go nuts with your to-do list.”
 
  ![png](/assets/img/ai-generated/picsart-meme.png){: lqip="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAARCAYAAADkIz3lAAAACXBIWXMAAA7AAAAOwAFq1okJAAACkUlEQVR4nB3K+U+ScRwH8O9/1dra9BdttYZhM/PEeQEqpqhoLvDuUPEOFIcHcYgaCOiDgfPoQUDFg6FO15/Beh755t6ftl4/v9j99ZV0eZbgcfEQx+IhknGRkvEYnZ0mcJE6wXX6gt9dp2V2JHgln8vGV+YnYLeY4VmeJ+/qAvnddgTWlhDZcufEsO8Ps37ulMZ7NXygTYX+thqY+9ppur+d5kYMGBs0YG58ILc0+ynLJo1aaVBXzntqi2BQvcJ4dx2Nf1BTn6EJjS0atOhbH4zduiwztZRJHSoF170tRLMyH19ay2i4vYbU2no8VzWiRNuSa9drs0xX8VKqUeTxOkU+dCUFmNBXk7G5it6UV+BpcSVKtU05Y68uy2qLnklVL55wtTIPvfVKzPc106hBTZqaMrxWKqCuLc0NdaqyTF9ZIHVUFnJjgwKWfi28syZanfhIw/o6tFYVobte+TDaVZ1l0z0qyWJq4PP9arine7FhHSCfbYjsIzqMtr3DSFPxg7mrKss2bF+loGOa+1emIHhtCDjnSPAu0OaSGa5vw3BbRnjQMSOz+P6OdCZG+YkYRSq+j/iBQMf72xTbC0KMbCF5sPN4fhzNsd/3N/LdbYZn0hdIX50jfZmiTDpF1+kUMlenuM2kHu9vLjm7PE/IZyciP0n8QjJ+iERsn2JHERIPwogdCEgehf+eirsy2w165JDPxbcDHkSFTUSFDQoHnCT4HYiEXNgLOXlka1ViwqZd9nts3Oe1Y8fvgOBfpcDaAq075uBenoXTPsW/L5olFvRY5R8uC/d5FhAOOPAzsEIhr5Vci2OwTg5iZtTEZ8aMEgut2+StNRsPrNv/x7B/ifzOGbKajTB1adD9vo73GTTSP4JK0XEb8Pq1AAAAAElFTkSuQmCC" }
 
 ### Repeating Points (Just in Case You Didn’t Get It)
 AI loves making sure you really, *really* get the point. It’ll say something, then explain it again just in case. Humans? We’re more like, “I’m not saying it again, rewind if you missed it.”
 
-**Example:**
-- *AI-generated*: “Exercise is vital for maintaining health. In other words, regular physical activity contributes significantly to overall well-being.”
-- *Human-written*: “Exercise is important. Period. It keeps you healthy, end of story.”
-- **More Examples**:
-   - *AI*: “Adequate hydration is crucial for bodily functions. To put it differently, drinking enough water supports all vital processes.”
-   - *Human*: “Drink water. Your body needs it, trust me.”
+**Examples:**
+1. *AI*: “Exercise is vital for maintaining health. In other words, regular physical activity contributes significantly to overall well-being.”
+    
+    *Human*: “Exercise is important. Period. It keeps you healthy, end of story.”
+2. *AI*: “Adequate hydration is crucial for bodily functions. To put it differently, drinking enough water supports all vital processes.”
+    
+    *Human*: “Drink water. Your body needs it, trust me.”
 
 If something feels like you’re in a lecture where the professor is trying to really drive the point home, it’s probably AI.
 
@@ -66,24 +71,27 @@ If something feels like you’re in a lecture where the professor is trying to r
 ### Cautious Language
 AI isn’t here to start any fights. It’s like that one friend who always says, “Well, to be fair…” just to keep the peace. You’ll spot phrases like “Some might argue,” “It could be said,” or “Generally speaking” all over the place. Humans? We’re more like, “Look, here’s what’s up.”
 
-**Example:**
-- *AI-generated*: “It could be said that maintaining a balanced diet is beneficial to overall health, though opinions on the specifics may vary.”
-- *Human-written*: “Eating better? Yeah, it helps. But hey, who doesn’t love a pizza night?”
-- **More Examples**:
-   - *AI*: “While some experts believe that regular breaks improve productivity, others suggest that consistent work periods yield better results.”
-   - *Human*: “Breaks are good. Unless you’re in the zone, then ride that wave.”
+**Examples:**
+1. *AI*: “It could be said that maintaining a balanced diet is beneficial to overall health, though opinions on the specifics may vary.”
+
+    *Human*: “Eating better? Yeah, it helps. But hey, who doesn’t love a pizza night?”
+
+2.  *AI*: “While some experts believe that regular breaks improve productivity, others suggest that consistent work periods yield better results.”
+
+    *Human*: “Breaks are good. Unless you’re in the zone, then ride that wave.”
 
 ![neutral-drake](/assets/img/ai-generated/neutral-drake.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABwX/xAAiEAABAgUEAwAAAAAAAAAAAAABAgQAAwURIQYHEjEiQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAF/8QAHREAAgEEAwAAAAAAAAAAAAAAAQIAAwQFMRESIf/aAAwDAQACEQMRAD8Av7WN3E+sPqfUG6FISm6eR6hYTpOkFIuwb3tmCvaMmfqdyZpKyqXm57wYb0yJfEePr7BmIZmtgW3EsrTFO46gceDU/9k="}
 
 ### Textbook Transitions
 If a piece reads like it was pulled from an academic paper, with transitions like “Furthermore,” “Moreover,” and “Consequently,” you’re looking at an AI’s work. Humans are more casual, we toss in a “So yeah,” “Anyway,” or even a simple “And oh, by the way.”
 
-**Example:**
-- *AI-generated*: “Furthermore, the benefits of exercise extend beyond physical health and encompass mental well-being as well.”
-- *Human-written*: “And yeah, it’s not just your body. Your brain gets a boost too.”
-- **More Examples**:
-   - *AI*: “In addition, the economic implications of such policies are worth considering.”
-   - *Human*: “Oh, and don’t forget, this stuff costs money too.”
+**Examples:**
+1. *AI*: “Furthermore, the benefits of exercise extend beyond physical health and encompass mental well-being as well.”
+
+    *Human*: “And yeah, it’s not just your body. Your brain gets a boost too.”
+2. *AI*: “In addition, the economic implications of such policies are worth considering.”
+
+    *Human*: “Oh, and don’t forget, this stuff costs money too.”
 
 ![ai-using-furthermore](/assets/img/ai-generated/ai-furthermore.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAb/xAAkEAABAgQFBQAAAAAAAAAAAAABAgUAAwQGERITISIHFDFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAaEQACAgMAAAAAAAAAAAAAAAAAAgEREzFB/9oADAMBAAIRAxEAPwCfvZ7dLfdpc2kqe51RmOkNoCOsLykYGjRiNoReoAepiQOIOw9RHLQnOriPPyEl23YOJY4f/9k="}
 
@@ -91,12 +99,13 @@ If a piece reads like it was pulled from an academic paper, with transitions lik
 ### Redundant Vocabulary
 AI doesn’t have favorites, it uses all the words it knows just to make things sound varied. So, if you’re seeing fancy terms like “pivotal,” “crucial,” and “significant” all in one paragraph, it’s probably AI showing off. Humans? We pick a word and roll with it. If it’s “important,” it’s just *important*.
 
-**Example:**
-- *AI-generated*: “The pivotal nature of these findings underscores their critical importance and highlights their significant impact.”
-- *Human-written*: “This stuff is pretty important. Seriously, it makes a big difference.”
-- **More Examples**:
-   - *AI*: “The notable outcome demonstrates an essential shift, pointing to crucial advancements in the field.”
-   - *Human*: “This change? Yeah, it’s a big deal.”
+**Examples:**
+1. *AI*: “The pivotal nature of these findings underscores their critical importance and highlights their significant impact.”
+
+    *Human*: “This stuff is pretty important. Seriously, it makes a big difference.”
+2. *AI*: “The notable outcome demonstrates an essential shift, pointing to crucial advancements in the field.”
+    
+    *Human*: “This change? Yeah, it’s a big deal.”
 
 ![distracted-boyfriend-meme-synonyms](/assets/img/ai-generated/synonym.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAIRAAAQMDBAMAAAAAAAAAAAAAAgABAwQFEhEVISIxcfD/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABoRAAICAwAAAAAAAAAAAAAAAAECAAMEEVH/2gAMAwEAAhEDEQA/ANdUXk46Y6WbAJALHVvLv86m2a7n3Gd8S5b0iIa0DrsynKAqYBeCf//Z"}
 

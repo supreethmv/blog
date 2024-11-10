@@ -3,9 +3,8 @@ title: "Stop Sounding Like a Robot!"
 description: "Your Guide to Editing AI Content Like a Pro—With Examples."
 author: supreeth
 date: 2024-11-03 10:00:00 +0800
-categories: [Quantum Algorithms]
-tags: [Computer Vision, Quantum Annealing, D-Wave, Image Segmentation]
-math: true
+categories: [LLMs, Writing]
+tags: [Blogging, Writing, English Writing, LLMs, ChatGPT, AI]
 image:
   path: /assets/img/ai-generated/ai-human.webp
   lqip: data:image/jpeg;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAgCdASoKAAoAAUAmJYgCdAEOzD31WN4AAPlibrWVXMCfMoNmhN4DQLjbEBvGRx90XNcG6TDn1z/lpyXscUAA
@@ -47,8 +46,6 @@ Ever notice how some writing has this steady, almost hypnotic flow? Like, every 
 - **More Examples**:
    - *AI*: “Effective time management strategies include prioritizing tasks and setting realistic goals.”
    - *Human*: “Want to get stuff done? Pick the urgent things and don’t go nuts with your to-do list.”
-
- <!-- ![png](/assets/img/ai-generated/drake.gif) -->
 
  ![png](/assets/img/ai-generated/picsart-meme.png){: lqip="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAARCAYAAADkIz3lAAAACXBIWXMAAA7AAAAOwAFq1okJAAACkUlEQVR4nB3K+U+ScRwH8O9/1dra9BdttYZhM/PEeQEqpqhoLvDuUPEOFIcHcYgaCOiDgfPoQUDFg6FO15/Beh755t6ftl4/v9j99ZV0eZbgcfEQx+IhknGRkvEYnZ0mcJE6wXX6gt9dp2V2JHgln8vGV+YnYLeY4VmeJ+/qAvnddgTWlhDZcufEsO8Ps37ulMZ7NXygTYX+thqY+9ppur+d5kYMGBs0YG58ILc0+ynLJo1aaVBXzntqi2BQvcJ4dx2Nf1BTn6EJjS0atOhbH4zduiwztZRJHSoF170tRLMyH19ay2i4vYbU2no8VzWiRNuSa9drs0xX8VKqUeTxOkU+dCUFmNBXk7G5it6UV+BpcSVKtU05Y68uy2qLnklVL55wtTIPvfVKzPc106hBTZqaMrxWKqCuLc0NdaqyTF9ZIHVUFnJjgwKWfi28syZanfhIw/o6tFYVobte+TDaVZ1l0z0qyWJq4PP9arine7FhHSCfbYjsIzqMtr3DSFPxg7mrKss2bF+loGOa+1emIHhtCDjnSPAu0OaSGa5vw3BbRnjQMSOz+P6OdCZG+YkYRSq+j/iBQMf72xTbC0KMbCF5sPN4fhzNsd/3N/LdbYZn0hdIX50jfZmiTDpF1+kUMlenuM2kHu9vLjm7PE/IZyciP0n8QjJ+iERsn2JHERIPwogdCEgehf+eirsy2w165JDPxbcDHkSFTUSFDQoHnCT4HYiEXNgLOXlka1ViwqZd9nts3Oe1Y8fvgOBfpcDaAq075uBenoXTPsW/L5olFvRY5R8uC/d5FhAOOPAzsEIhr5Vci2OwTg5iZtTEZ8aMEgut2+StNRsPrNv/x7B/ifzOGbKajTB1adD9vo73GTTSP4JK0XEb8Pq1AAAAAElFTkSuQmCC" }
 

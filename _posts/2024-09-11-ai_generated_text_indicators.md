@@ -73,7 +73,7 @@ AI isn’t here to start any fights. It’s like that one friend who always says
    - *AI*: “While some experts believe that regular breaks improve productivity, others suggest that consistent work periods yield better results.”
    - *Human*: “Breaks are good. Unless you’re in the zone, then ride that wave.”
 
-![repeating-professor-gif](/assets/img/ai-generated/neutral-drake.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABwX/xAAiEAABAgUEAwAAAAAAAAAAAAABAgQAAwURIQYHEjEiQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAF/8QAHREAAgEEAwAAAAAAAAAAAAAAAQIAAwQFMRESIf/aAAwDAQACEQMRAD8Av7WN3E+sPqfUG6FISm6eR6hYTpOkFIuwb3tmCvaMmfqdyZpKyqXm57wYb0yJfEePr7BmIZmtgW3EsrTFO46gceDU/9k="}
+![neutral-drake](/assets/img/ai-generated/neutral-drake.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABwX/xAAiEAABAgUEAwAAAAAAAAAAAAABAgQAAwURIQYHEjEiQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAF/8QAHREAAgEEAwAAAAAAAAAAAAAAAQIAAwQFMRESIf/aAAwDAQACEQMRAD8Av7WN3E+sPqfUG6FISm6eR6hYTpOkFIuwb3tmCvaMmfqdyZpKyqXm57wYb0yJfEePr7BmIZmtgW3EsrTFO46gceDU/9k="}
 
 ### Textbook Transitions
 If a piece reads like it was pulled from an academic paper, with transitions like “Furthermore,” “Moreover,” and “Consequently,” you’re looking at an AI’s work. Humans are more casual, we toss in a “So yeah,” “Anyway,” or even a simple “And oh, by the way.”
@@ -85,7 +85,7 @@ If a piece reads like it was pulled from an academic paper, with transitions lik
    - *AI*: “In addition, the economic implications of such policies are worth considering.”
    - *Human*: “Oh, and don’t forget, this stuff costs money too.”
 
-![repeating-professor-gif](/assets/img/ai-generated/ai-furthermore.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAb/xAAkEAABAgQFBQAAAAAAAAAAAAABAgUAAwQGERITISIHFDFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAaEQACAgMAAAAAAAAAAAAAAAAAAgEREzFB/9oADAMBAAIRAxEAPwCfvZ7dLfdpc2kqe51RmOkNoCOsLykYGjRiNoReoAepiQOIOw9RHLQnOriPPyEl23YOJY4f/9k="}
+![ai-using-furthermore](/assets/img/ai-generated/ai-furthermore.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAb/xAAkEAABAgQFBQAAAAAAAAAAAAABAgUAAwQGERITISIHFDFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAaEQACAgMAAAAAAAAAAAAAAAAAAgEREzFB/9oADAMBAAIRAxEAPwCfvZ7dLfdpc2kqe51RmOkNoCOsLykYGjRiNoReoAepiQOIOw9RHLQnOriPPyEl23YOJY4f/9k="}
 
 
 ### Redundant Vocabulary
@@ -98,7 +98,7 @@ AI doesn’t have favorites, it uses all the words it knows just to make things 
    - *AI*: “The notable outcome demonstrates an essential shift, pointing to crucial advancements in the field.”
    - *Human*: “This change? Yeah, it’s a big deal.”
 
-![repeating-professor-gif](/assets/img/ai-generated/synonym.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAIRAAAQMDBAMAAAAAAAAAAAAAAgABAwQFEhEVISIxcfD/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABoRAAICAwAAAAAAAAAAAAAAAAECAAMEEVH/2gAMAwEAAhEDEQA/ANdUXk46Y6WbAJALHVvLv86m2a7n3Gd8S5b0iIa0DrsynKAqYBeCf//Z"}
+![distracted-boyfriend-meme-synonyms](/assets/img/ai-generated/synonym.jpg){: lqip="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAIRAAAQMDBAMAAAAAAAAAAAAAAgABAwQFEhEVISIxcfD/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABoRAAICAwAAAAAAAAAAAAAAAAECAAMEEVH/2gAMAwEAAhEDEQA/ANdUXk46Y6WbAJALHVvLv86m2a7n3Gd8S5b0iIa0DrsynKAqYBeCf//Z"}
 
 ## So, What’s the Verdict?
 If you spot some of these signs, it doesn’t *always* mean you’re reading AI-generated text, after all, some humans write like they’re competing for a Pulitzer. But if the text is ticking off more than a few of these boxes, it might just be the handiwork of an LLM a.k.a AI.

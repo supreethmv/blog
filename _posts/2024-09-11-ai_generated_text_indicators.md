@@ -2,7 +2,7 @@
 title: "Stop Sounding Like a Robot!"
 description: "Your Guide to Editing AI Content Like a Pro—With Examples."
 author: supreeth
-date: 2024-11-10 10:00:00 +0800
+date: 2024-11-09 10:00:00 +0800
 categories: [LLMs, Writing]
 tags: [Blogging, Writing, English Writing, LLMs, ChatGPT, AI]
 image:

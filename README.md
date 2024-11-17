@@ -7,7 +7,7 @@ The website is built using a Jekyll theme called [Chirpy](https://github.com/cot
 
 ## License
 
-The following directories and their contents are Copyright Tom Preston-Werner.
+The following directories and their contents are Copyright Supreeth Mysore Venkatesh.
 You may not reuse anything therein without my permission:
 
 * \_posts/

@@ -78,7 +78,7 @@ Think of public transport, like a bus or train, with predetermined stops. Your d
 
 ## How IEEE 754 Impacts Machine Learning
 
-When you add $0.1$ three times, you might expect the result to be exactly $0.3$. However, due to floating-point approximations, the result deviates slightly.
+Another simple example is when you add $0.1$ three times, you might expect the result to be exactly $0.3$. However, due to floating-point approximations, the result deviates slightly.
 
 ```python
 result = 0.1 + 0.1 + 0.1
@@ -227,6 +227,11 @@ std = np.std(data)
 
 standardized = (data - mean) / std
 print("Standardized Data:", standardized)
+```
+
+**Output:**
+```plaintext
+Standardized Data: [-1.22474487  0.          1.22474487]
 ```
 
 The tiny differences between the values will appear exaggerated after standardization. This behavior arises because floating-point representation cannot accurately handle extremely small values.

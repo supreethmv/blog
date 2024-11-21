@@ -2,8 +2,8 @@
 title: "Discrete Digital Deception: Bits Fooling You"
 description: "How tech plays the game, making fake look the same."
 author: supreeth
-date: 2024-11-09 10:00:00 +0800
-last_modified_at: 2024-11-09 10:00:00 +0800
+date: 2024-11-18 10:00:00 +0800
+last_modified_at: 2024-11-18 10:00:00 +0800
 categories: [Fundamentals, Machine Learning]
 tags: [Machine Learning, Data Science, Digital Content, Discrete Math]
 math: true

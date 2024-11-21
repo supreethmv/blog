@@ -56,140 +56,187 @@ Here’s the twist: even at a live concert with analog instruments, the sound yo
 
 ### The Math: When 1.1 + 2.2 ≠ 3.3
 
-Let’s start with numbers. In the digital world, even basic math can be misleading. If you've ever tried to add `1.1` and `2.2` in Python (or any other programming language), you'll notice the result isn’t exactly `3.3`.
-
+Let’s check with numbers. In the digital world, even basic math can be misleading. If you've ever tried to add `1.1` and `2.2` in Python (or any other programming language), you'll notice the result isn’t exactly `3.3`.
 
 ```python
->>> 1.1 + 2.2 == 3.3
+1.1 + 2.2 == 3.3
+```
+**Output:**
+```plaintext
 False
 ```
-Because
+![math-lady](/assets/img/digital-illusions/math-lady.jpg)
 
-```python
->>> 1.1 + 2.2
-3.3000000000000003
-```
 
 The digital world relies on the **IEEE 754 Standard for Floating-Point Arithmetic**, a method of representing fractions digitally. This system introduces rounding errors because computers can only store a finite number of decimal places. Think of it as trying to pour a gallon of water into a pint-sized jar.
 Instead of dealing with precise values, computers approximate. The result? Slight inaccuracies like the one above. Computers use binary to represent numbers, and binary isn’t great at storing fractions exactly. So, what you’re seeing is the closest approximation.
 
 Think of public transport, like a bus or train, with predetermined stops. Your destination might not match a stop exactly, so you get off at the nearest one and walk the rest of the way. Similarly, computers approximate numbers to the nearest value they can represent, just wish it’s a perfect match.
 
-![math-lady](/assets/img/digital-illusions/math-lady.jpg)
-
 ---
 
 
-## Adverse Effects in Machine Learning
+## How IEEE 754 Impacts Machine Learning
 
-### The Effect of IEEE 754 in Standardization
+When you add $0.1$ three times, you might expect the result to be exactly $0.3$. However, due to floating-point approximations, the result deviates slightly.
 
-When performing operations like standardization, values are transformed using the formula:
+```python
+result = 0.1 + 0.1 + 0.1
+
+print("Result of 0.1 + 0.1 + 0.1:", result)
+print("Is result equal to 0.3?:", result == 0.3)
+```
+
+---
+
+```plaintext
+Result of 0.1 + 0.1 + 0.1: 0.30000000000000004
+Is result equal to 0.3?: False
+```
+
+In machine learning and numerical computations, such errors can:
+ - **Impact Equality Comparisons:** Direct comparisons (e.g., `a == b`) may fail due to tiny differences caused by floating-point errors.
+   
+ - **Break Algorithms:** Algorithms relying on precise equality checks (e.g., sorting, clustering) may behave unexpectedly.
+
+### **How to Mitigate This?**
+
+#### Use `math.isclose`:
+Instead of direct equality, use a tolerance:
+```python
+import math
+
+print("Is result approximately equal to 0.3?:", math.isclose(result, 0.3))
+```
+
+**Output:**
+```plaintext
+Is result approximately equal to 0.3?: True
+```
+
+---
+
+#### Use the `decimal` Module:
+Python’s `decimal` module provides precise arithmetic for situations where exact results are needed:
+```python
+from decimal import Decimal
+
+result = Decimal('0.1') + Decimal('0.1') + Decimal('0.1')
+print("Result with Decimal:", result)
+print("Is result equal to 0.3?:", result == Decimal('0.3'))
+```
+
+**Output:**
+```plaintext
+Result with Decimal: 0.3
+Is result equal to 0.3?: True
+```
+
+In machine learning, we frequently standardize data to scale features to a mean of `0` and a standard deviation of `1`. However, this process is not immune to the quirks of the **IEEE 754 floating-point standard**, which governs how numbers are represented in digital systems. These quirks can introduce precision errors that disrupt calculations, particularly in large-scale or small-scale datasets.
+
+In machine learning workflows, these floating-point quirks can cause:
+ - **Distorted Feature Scaling:** Features with extreme magnitudes (very large or small) lose accuracy during preprocessing.
+ - **Poor Convergence in Models:** Gradient-based optimizers rely on precise calculations, and any error in feature scaling propagates during training.
+ - **Amplified Noise in Sparse Data:** Sparse datasets may introduce unexpected biases due to exaggerated small values after standardization.
+
+These issues manifest prominently during standardization due to the formula:
 
 $$
 z = \frac{x - \mu}{\sigma}
 $$
 
-Here:
+Where:
 - $x$ is the data point,
-- $\mu$ is the mean of the feature,
+- $\mu$ is the mean,
 - $\sigma$ is the standard deviation.
 
-If $x$, $\mu$, or $\sigma$ have very small or very large magnitudes, floating-point approximations can affect the computation, especially when $x$ is close to $\mu$.
+When $\mu$ or $\sigma$ is very large or very small, **floating-point precision errors** can cause distortion.
 
-**Example of Precision Loss:**
+---
+
+### Amplification of Precision Errors
+If $\sigma$ (standard deviation) is very small or $\mu$ (mean) involves large numbers, significant digits may be lost during subtraction or division.
+
 ```python
 import numpy as np
 
-# Simulate data with small differences
-data = np.array([1.0000001, 1.0000002, 1.0000003])
+data = np.array([1e10 + 1e-5, 1e10 + 2e-5, 1e10 + 3e-5])
 mean = np.mean(data)
 std = np.std(data)
 
-# Standardize
+# Standardization
 standardized = (data - mean) / std
 print("Standardized Data:", standardized)
 ```
 
-**Output:**
-```
-Standardized Data: [-1.22474487, 0.0, 1.22474487]
+The mean of these values is:
+
+$$
+\mu = \frac{(1e10 + 1e-5) + (1e10 + 2e-5) + (1e10 + 3e-5)}{3} = 1e10 + 2e-5
+$$
+
+The standard deviation measures the spread of the data points. Since the values differ by equal increments (`1e-5`):
+
+$$
+\sigma = 1e-5
+$$
+
+For each data point, the standardized value is:
+
+$$
+z = \frac{x - \mu}{\sigma}
+$$
+
+
+Substituting the values:
+- For `x = 1e10 + 1e-5`:
+  $$
+  z = \frac{(1e10 + 1e-5) - (1e10 + 2e-5)}{1e-5} = -1
+  $$
+- For `x = 1e10 + 2e-5`:
+  $$
+  z = \frac{(1e10 + 2e-5) - (1e10 + 2e-5)}{1e-5} = 0
+  $$
+- For `x = 1e10 + 3e-5`:
+  $$
+  z = \frac{(1e10 + 3e-5) - (1e10 + 2e-5)}{1e-5} = 1
+  $$
+
+
+Thus, you would **ideally** expect the output to be:
+```plaintext
+Standardized Data: [-1, 0, 1]
 ```
 
-Notice how despite the tiny differences in the original data, the output seems exaggerated. Floating-point precision amplifies these differences unnaturally.
+Well, run the code yourself and be amazed to see the output as:
+```plaintext
+Standardized Data: [-1.31982404 -0.21997067  1.09985336]
+```
+
+Due to the **IEEE 754 floating-point standard**, large numbers like `1e10` lose precision when subtracted from similar large numbers (e.g., `1e10 - 1e10`). This phenomenon, called **catastrophic cancellation**, causes the computation to lose significant digits, introducing inaccuracies into the standardized result.
+
+---
+
+### Errors in Sparse or Noisy Data
+Sparse datasets with very small values (`1e-9, 1e-10`) are particularly prone to precision issues. Standardizing these values often magnifies errors.
+
+```python
+data = np.array([1e-9, 2e-9, 3e-9])
+mean = np.mean(data)
+std = np.std(data)
+
+standardized = (data - mean) / std
+print("Standardized Data:", standardized)
+```
+
+The tiny differences between the values will appear exaggerated after standardization. This behavior arises because floating-point representation cannot accurately handle extremely small values.
+
+When numbers are extremely small, rounding errors dominate, making the transformation potentially misleading.
 
 ---
 
 
-### Loss of Information for Sparse Data
-If a feature has many zeros or near-constant values, standardization can amplify noise or lead to values close to machine epsilon (~ $10^{-16}$), which the model may misinterpret as significant.
-
-**Example:**
-```python
-sparse_data = np.array([0, 0, 0, 1e-10, 1e-9, 0])
-mean = np.mean(sparse_data)
-std = np.std(sparse_data)
-
-standardized = (sparse_data - mean) / std
-print("Standardized Sparse Data:", standardized)
-```
-
-**Output:**
-```
-Standardized Sparse Data: [-0.57735027 -0.57735027 -0.57735027  0.11547005  1.03890377 -0.57735027]
-```
-
-The standardized values are distorted due to the small magnitudes of the original data.
-
-**Use Case:**  
-Models relying on such features (e.g., logistic regression) may struggle to learn meaningful patterns, especially for imbalanced datasets.
-
----
-
-### Impact on Gradient-Based Optimizers
-Standardization introduces numerical instability when gradients involve very small or very large scaled values. This can affect convergence during training.
-
-**Example with Neural Networks:**
-```python
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import SGDClassifier
-
-# Simulate poorly scaled features
-X = np.array([[1e6, 1e-6], [1e6 + 1, 1e-6 + 1e-9], [1e6 - 1, 1e-6 - 1e-9]])
-y = [0, 1, 0]
-
-# Without standardization
-clf = SGDClassifier(loss="log")
-clf.fit(X, y)
-print("Without Standardization:", clf.coef_)
-
-# With standardization
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-clf.fit(X_scaled, y)
-print("With Standardization:", clf.coef_)
-```
-
-**Output:**  
-Without standardization, the model struggles to handle the scale disparity. With standardization, it performs better but risks introducing bias from numerical instability.
-
----
-
-## When to Be Cautious
-
-### 1. Very Small Standard Deviations
-When features have nearly constant values, dividing by a tiny standard deviation amplifies noise.
-
-**Mitigation:** Add a small epsilon ($\epsilon$) to the denominator:
-```python
-epsilon = 1e-8
-standardized = (data - mean) / (std + epsilon)
-```
-
-### 2. Outliers
-Extreme values disproportionately influence the mean and standard deviation, skewing the transformed values.
-
-**Mitigation:** Use robust scaling methods, such as scaling based on the median and interquartile range.
+Understanding these limitations helps us make better decisions when working with digital data, ensuring our machine learning models remain robust and reliable.
 
 ---
 

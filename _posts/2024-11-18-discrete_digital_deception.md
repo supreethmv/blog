@@ -50,7 +50,7 @@ Think of pixels like LEGO bricks. A low-res image is like using chunky blocks to
 ### Your Ears Are Just as Gullible
 Did you know your favorite song is just numbers? Yep, digital audio records sound by taking snapshots of it, typically 44,000 times per second (44.1 kHz). Each snapshot is a single value, and when played back in sequence, it tricks your ears into hearing a smooth melody.
 
-Here’s the twist: even at a live concert with analog instruments, the sound you hear isn’t entirely *pure*. For a large audience, microphones capture the sound waves, convert them into electrical signals, and loudspeakers recreate them. While the final sound mimics the real thing, it remains an interpretation—one step removed from nature’s true analog form.
+Here’s the twist: even at a live concert with analog instruments, the sound you hear isn’t entirely *pure*. For a large audience, microphones capture the sound waves, convert them into electrical signals, and loudspeakers recreate them. While the final sound mimics the real thing, it remains an interpretation, one step removed from nature’s true analog form.
 
 ---
 

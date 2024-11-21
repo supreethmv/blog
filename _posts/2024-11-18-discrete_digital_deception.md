@@ -94,7 +94,7 @@ In base-$2$, $0.1$ is a repeating binary fraction:
 
 $$\text{0.1}_{10} = 0.0001100110011..._2$$
 
-Normalize it so it looks like $1.\text{Mantissa} \times 2^{\text{Exponent}}$:
+Normalize it so it looks like $1.\<\text{mantissa}\> \times 2^{\<\text{exponent}\>}$:
 
 $$\text{0.1} = 1.1001100110011... \times 2^{-4}$$
 

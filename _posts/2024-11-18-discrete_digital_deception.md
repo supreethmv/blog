@@ -78,21 +78,71 @@ Think of public transport, like a bus or train, with predetermined stops. Your d
 
 ## How IEEE 754 Impacts Machine Learning
 
-Another simple example is when you add $0.1$ three times, you might expect the result to be exactly $0.3$. However, due to floating-point approximations, the result deviates slightly.
+
+When computers store real numbers, they don’t store them exactly as we work with them. Instead, they use a system called floating-point arithmetic, which is like a scientific notation for computers. For example, the number $123.45$ in scientific notation is written as $1.2345×10^{2}$
+Similarly, IEEE 754 represents a floating-point number in binary as:
+
+$$\text{Number} = (-1)^{\text{Sign}}  \times \text{Mantissa} \times 2^{\text{Exponent}}$$
+where:
+ - **Sign**: 0 for positive, 1 for negative.
+ - **Exponent**: Scales the number up or down (stored with a bias to include negative values).
+ - **Mantissa (Fraction)**: Stores the actual digits, normalized to begin with 1 (hidden bit).
+
+**Example: Representing 0.1 in IEEE 754**
+
+In base-$2$, $0.1$ is a repeating binary fraction:
+
+$$\text{0.1}_{10} = 0.0001100110011..._2$$
+
+Normalize it so it looks like $1.\text{Mantissa} \times 2^{\text{Exponent}}$:
+
+$$\text{0.1} = 1.1001100110011... \times 2^{-4}$$
+
+For a $32$-bit float:
+- **Sign (1 bit):** $0$ (positive)
+- **Exponent (8 bits):** Add bias of $2^{8-1}-1 = 2^7-1 = 127$ to $-4$: $-4 + 127 = 123 \rightarrow 01111011$
+- **Mantissa (23 bits):** Take the first $23$ bits of $1001100110011...$.
+
+Result:
+
+$$\text{Binary Representation: } 0\ 01111011\ 10011001100110011001100$$
+
+In decimal, this becomes approximately:
+
+$$\text{0.1} \approx 0.10000000149011612$$
+
+Let’s see how this approximation causes issues in Python.
 
 ```python
-result = 0.1 + 0.1 + 0.1
+# Representing 0.1 in Python
+import struct
 
-print("Result of 0.1 + 0.1 + 0.1:", result)
+# Convert 0.1 to IEEE 754 binary representation
+binary_0_1 = struct.unpack('!I', struct.pack('!f', 0.1))[0]
+binary_str = f"{binary_0_1:032b}"  # Format as 32-bit binary
+
+# Print binary representation and real value
+print("Binary Representation of 0.1 (IEEE 754):", binary_str)
+print("Actual Stored Value of 0.1:", struct.unpack('!f', struct.pack('!I', binary_0_1))[0])
+
+# Adding 0.1 three times
+result = 0.1 + 0.1 + 0.1
+print("\nResult of 0.1 + 0.1 + 0.1:", result)
 print("Is result equal to 0.3?:", result == 0.3)
 ```
 
 ---
 
+**Output:**
 ```plaintext
+Binary Representation of 0.1 (IEEE 754): 00111101110011001100110011001100
+Actual Stored Value of 0.1: 0.10000000149011612
+
 Result of 0.1 + 0.1 + 0.1: 0.30000000000000004
 Is result equal to 0.3?: False
 ```
+
+This confirms the binary representation of $0.1$ is only an **approximation** in IEEE 754. Repeated addition of this approximate value accumulates the tiny error, resulting in a sum slightly larger than $0.3$.
 
 In machine learning and numerical computations, such errors can:
  - **Impact Equality Comparisons:** Direct comparisons (e.g., `a == b`) may fail due to tiny differences caused by floating-point errors.
@@ -172,13 +222,13 @@ print("Standardized Data:", standardized)
 The mean of these values is:
 
 $$
-\mu = \frac{(1e10 + 1e-5) + (1e10 + 2e-5) + (1e10 + 3e-5)}{3} = 1e10 + 2e-5
+\mu = \frac{(1 \times 10 ^ {10} + 1 \times 10 ^ {-5}) + (1 \times 10 ^ {10} + 2 \times 10 ^ {-5}) + (1 \times 10 ^ {10} + 3 \times 10 ^ {-5})}{3} = 1 \times 10 ^ {10} + 2 \times 10 ^ {-5}
 $$
 
 The standard deviation measures the spread of the data points. Since the values differ by equal increments (`1e-5`):
 
 $$
-\sigma = 1e-5
+\sigma = 1 \times 10 ^ {-5}
 $$
 
 For each data point, the standardized value is:
@@ -189,17 +239,17 @@ $$
 
 
 Substituting the values:
-- For `x = 1e10 + 1e-5`:
+- For $x = 1 \times 10 ^ {10} + 1 \times 10 ^ {-5}$:
   $$
-  z = \frac{(1e10 + 1e-5) - (1e10 + 2e-5)}{1e-5} = -1
+  z = \frac{(1 \times 10 ^ {10} + 1 \times 10 ^ {-5}) - (1 \times 10 ^ {10} + 2 \times 10 ^ {-5})}{1 \times 10 ^ {-5}} = -1
   $$
-- For `x = 1e10 + 2e-5`:
+- For $x = 1 \times 10 ^ {10} + 2 \times 10 ^ {-5}$:
   $$
-  z = \frac{(1e10 + 2e-5) - (1e10 + 2e-5)}{1e-5} = 0
+  z = \frac{(1 \times 10 ^ {10} + 2 \times 10 ^ {-5}) - (1 \times 10 ^ {10} + 2 \times 10 ^ {-5})}{1 \times 10 ^ {-5}} = 0
   $$
-- For `x = 1e10 + 3e-5`:
+- For $x = 1 \times 10 ^ {10} + 3 \times 10 ^ {-5}$:
   $$
-  z = \frac{(1e10 + 3e-5) - (1e10 + 2e-5)}{1e-5} = 1
+  z = \frac{(1 \times 10 ^ {10} + 3 \times 10 ^ {-5}) - (1 \times 10 ^ {10} + 2 \times 10 ^ {-5})}{1 \times 10 ^ {-5}} = 1
   $$
 
 
@@ -213,12 +263,12 @@ Well, run the code yourself and be amazed to see the output as:
 Standardized Data: [-1.31982404 -0.21997067  1.09985336]
 ```
 
-Due to the **IEEE 754 floating-point standard**, large numbers like `1e10` lose precision when subtracted from similar large numbers (e.g., `1e10 - 1e10`). This phenomenon, called **catastrophic cancellation**, causes the computation to lose significant digits, introducing inaccuracies into the standardized result.
+Due to the **IEEE 754 floating-point standard**, large numbers like $1 \times 10 ^ {10}$ lose precision when subtracted from similar large numbers (e.g., $(1 \times 10 ^ {10}) - (1 \times 10 ^ {10})$). This phenomenon, called **catastrophic cancellation**, causes the computation to lose significant digits, introducing inaccuracies into the standardized result.
 
 ---
 
 ### Errors in Sparse or Noisy Data
-Sparse datasets with very small values (`1e-9, 1e-10`) are particularly prone to precision issues. Standardizing these values often magnifies errors.
+Sparse datasets with very small values (in the order of $10 ^ {-9}$ , $10 ^ {-10}$) are particularly prone to precision issues. Standardizing these values often magnifies errors.
 
 ```python
 data = np.array([1e-9, 2e-9, 3e-9])

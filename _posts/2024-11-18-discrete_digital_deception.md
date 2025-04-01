@@ -17,9 +17,7 @@ image:
 ## Introduction: Welcome to the Matrix!
 What’s your screen time today?
 
-We’re living in an increasingly digital world, where nothing is truly continuous. Everything you see, hear, and experience digitally is an approximation, a clever lie designed to trick your senses. Let’s dive into the digital world, where reality is cut into tiny, discrete pieces to fit the rigid framework of 1s and 0s. 
-
-From how your computer adds numbers to how your favorite song streams, everything in the digital realm is a deception orchestrated to satisfy our limited human perception. Let’s dive into this fascinating world and uncover the tricks of the digital trade.
+We’re living in an increasingly digital world, where nothing is truly continuous. Everything you see, hear, and experience digitally is an approximation, a clever lie designed to trick your senses. From how your computer adds numbers to how your favorite song streams, everything in the digital realm is a deception orchestrated to satisfy our limited human perception. Let’s dive into the digital world, where reality is cut into tiny, discrete pieces to fit the rigid framework of 1s and 0s.
 
 ---
 

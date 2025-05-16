@@ -552,7 +552,7 @@ binary_solution [0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0]
 
 ACE modifies ABE by skipping the QUBO formulation entirely during evaluation.
 
-Instead of optimizing over probabilities, we decode a binary vector $x$ from the measured output and evaluate the **original min-cut cost function** directly <sup>[1]</sup>:
+Instead of optimizing over probabilities, we decode a binary vector $x$ from the measured output and evaluate the **original min-cut cost function** directly [1](#ref1):
 $$
 C(x) = \sum_{i < j} x_i (1 - x_j) w(v_i, v_j)
 $$
@@ -729,17 +729,12 @@ By formulating image segmentation as a graph cut, reducing it to a QUBO, and the
 
 ## 📄 References
 
-<a name="ref1"></a>  
-[1] S. M. Venkatesh, A. Macaluso, M. Nuske, M. Klusch, and A. Dengel, "Qubit-Efficient Variational Quantum Algorithms for Image Segmentation," 2024 IEEE International Conference on Quantum Computing and Engineering (QCE), Montreal, QC, Canada, 2024, pp. 450–456. DOI: [10.1109/QCE60285.2024.00059](https://doi.org/10.1109/QCE60285.2024.00059), [arXiv:2405.14405](https://arxiv.org/abs/2405.14405)
+##### <span id="ref1"></span> [1] S. M. Venkatesh, A. Macaluso, M. Nuske, M. Klusch, and A. Dengel, "Qubit-Efficient Variational Quantum Algorithms for Image Segmentation," 2024 IEEE International Conference on Quantum Computing and Engineering (QCE), Montreal, QC, Canada, 2024, pp. 450–456. DOI: [10.1109/QCE60285.2024.00059](https://doi.org/10.1109/QCE60285.2024.00059), [arXiv:2405.14405](https://arxiv.org/abs/2405.14405)
 
-<a name="ref2"></a>  
-[2] S. M. Venkatesh, A. Macaluso, M. Nuske, M. Klusch and A. Dengel, "Q-Seg: Quantum Annealing-Based Unsupervised Image Segmentation," in IEEE Computer Graphics and Applications, vol. 44, no. 5, pp. 27-39, Sept.-Oct. 2024, doi: [10.1109/MCG.2024.3455012](https://doi.org/10.1109/MCG.2024.3455012), [arXiv:2311.12912](https://arxiv.org/abs/2311.12912).
+##### <span id="ref2"></span> [2] S. M. Venkatesh, A. Macaluso, M. Nuske, M. Klusch and A. Dengel, "Q-Seg: Quantum Annealing-Based Unsupervised Image Segmentation," in IEEE Computer Graphics and Applications, vol. 44, no. 5, pp. 27-39, Sept.-Oct. 2024, doi: [10.1109/MCG.2024.3455012](https://doi.org/10.1109/MCG.2024.3455012), [arXiv:2311.12912](https://arxiv.org/abs/2311.12912).
 
-<a name="ref3"></a>  
-[3] Farhi, E., Goldstone, J., & Gutmann, S. (2014). A quantum approximate optimization algorithm. arXiv preprint [arXiv:1411.4028](https://arxiv.org/abs/1411.4028).
+##### <span id="ref3"></span> [3] Farhi, E., Goldstone, J., & Gutmann, S. (2014). A quantum approximate optimization algorithm. arXiv preprint [arXiv:1411.4028](https://arxiv.org/abs/1411.4028).
 
-<a name="ref4"></a>  
-[4] Rančić, M. J. (2023). Noisy intermediate-scale quantum computing algorithm for solving an n-vertex MaxCut problem with log (n) qubits. Physical Review Research, 5(1), L012021. DOI: [10.1103/PhysRevResearch.5.L012021](https://doi.org/10.1103/PhysRevResearch.5.L012021)
+##### <span id="ref4"></span> [4] Rančić, M. J. (2023). Noisy intermediate-scale quantum computing algorithm for solving an n-vertex MaxCut problem with log (n) qubits. Physical Review Research, 5(1), L012021. DOI: [10.1103/PhysRevResearch.5.L012021](https://doi.org/10.1103/PhysRevResearch.5.L012021)
 
-<a name="ref5"></a>  
-[5] Tan, B., Lemonde, M. A., Thanasilp, S., Tangpanitanon, J., & Angelakis, D. G. (2021). Qubit-efficient encoding schemes for binary optimisation problems. Quantum, 5, 454. DOI: [10.22331/q-2021-05-04-454](https://doi.org/10.22331/q-2021-05-04-454)
+##### <span id="ref5"></span> [5] Tan, B., Lemonde, M. A., Thanasilp, S., Tangpanitanon, J., & Angelakis, D. G. (2021). Qubit-efficient encoding schemes for binary optimisation problems. Quantum, 5, 454. DOI: [10.22331/q-2021-05-04-454](https://doi.org/10.22331/q-2021-05-04-454)

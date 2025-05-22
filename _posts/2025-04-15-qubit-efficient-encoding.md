@@ -372,7 +372,7 @@ ABE uses $\log_2(n) + 1$ qubits:
 - $\log_2(n)$ **register qubits** represent binary states.  
 - One **ancilla qubit** helps encode the binary decision.
 
-Each computational basis state of the register corresponds to one binary variable. The ancilla qubit’s amplitude is used to decide the bit value <sup>[5]</sup>:
+Each computational basis state of the register corresponds to one binary variable. The ancilla qubit’s amplitude is used to decide the bit value \[[5](#ref5)\]:
 $$
 x_{v_i} = \begin{cases} 0 & \text{if } |a_i|^2 > |b_i|^2 \\ 1 & \text{otherwise} \end{cases}
 $$

@@ -23,3 +23,7 @@ A natural next step is to **cluster** assets into groups such that **intra-clust
 - **Statistical arbitrage** — pairs or basket trading strategies rely on identifying groups of cointegrated or highly correlated assets [[6](#ref6)].
 - **Risk management** — understanding correlation structures helps quantify systemic risk and contagion.
 
+### Why Classical Methods Struggle
+
+Classical clustering algorithms such as $k$-Means, $k$-Medoids (PAM), hierarchical clustering, and even spectral methods like SPONGE [[7](#ref7)] face four fundamental limitations when applied to signed correlation graphs:
+

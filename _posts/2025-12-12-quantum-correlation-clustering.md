@@ -45,3 +45,12 @@ Centroid-based methods (e.g., $k$-Means, PAM) optimize a **proxy objective** —
 #### (iv) Not robust for varying-sized clusters
 Spectral methods like SPONGE perform well on sparse graphs with discrete weights $\in \{-1, 0, +1\}$ and approximately equal cluster sizes, but degrade significantly on dense financial correlation graphs with continuous weights and heterogeneous cluster structures. Similarly, $k$-Means assumes spherical, equally-sized clusters — an assumption that rarely holds in practice.
 
+### Enter GCS-Q
+
+The **Graph-based Coalition Structure Generation algorithm (GCS-Q)** [[3](#ref3)] was originally developed for cooperative game theory but is a natural fit for signed graph clustering. It operates **directly on the signed, weighted correlation graph**, avoiding lossy distance transformations. Starting with all assets in a single cluster, it **recursively bipartitions** each subgraph by solving a minimum-cut formulated as a **QUBO (Quadratic Unconstrained Binary Optimization)** problem, which is solved using a **D-Wave quantum annealer**. The algorithm **automatically determines $k$**, terminating when no further split improves intra-cluster agreement.
+
+This post walks through the entire pipeline, from downloading stock data to running GCS-Q on D-Wave hardware, step by step.
+
+![Methodology](/assets/img/correlation-clustering/methodology.png)
+*Overview of the GCS-Q approach for correlation clustering of financial assets [[1](#ref1)]*
+

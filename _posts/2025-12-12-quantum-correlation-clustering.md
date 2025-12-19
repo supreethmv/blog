@@ -61,3 +61,10 @@ This post walks through the entire pipeline, from downloading stock data to runn
 ### From Returns to a Signed Graph
 
 Consider a set of financial assets $\mathcal{A} = \{a_1, a_2, \dots, a_n\}$ whose historical returns over a rolling window are denoted by $r_i(t)$ for asset $a_i$ at time $t$. The pairwise Pearson correlation coefficients are computed as:
+
+$$
+\rho_{ij} = \frac{\text{Cov}(r_i, r_j)}{\sigma_{r_i} \sigma_{r_j}}, \quad \rho_{ij} \in [-1, 1]
+$$
+
+These correlations define a **signed, weighted, undirected graph** $G = (V, E, w)$ where:
+- Each vertex $v_i \in V$ corresponds to asset $a_i$.

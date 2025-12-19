@@ -54,3 +54,10 @@ This post walks through the entire pipeline, from downloading stock data to runn
 ![Methodology](/assets/img/correlation-clustering/methodology.png)
 *Overview of the GCS-Q approach for correlation clustering of financial assets [[1](#ref1)]*
 
+---
+
+## Problem Formulation
+
+### From Returns to a Signed Graph
+
+Consider a set of financial assets $\mathcal{A} = \{a_1, a_2, \dots, a_n\}$ whose historical returns over a rolling window are denoted by $r_i(t)$ for asset $a_i$ at time $t$. The pairwise Pearson correlation coefficients are computed as:

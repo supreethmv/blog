@@ -75,3 +75,10 @@ Positive edges indicate co-movement; negative edges indicate anti-correlation. U
 ### The Clustering Objective
 
 We seek a partition $\Pi = \{C_1, C_2, \dots, C_k\}$ of $V$ into disjoint clusters that **maximizes intra-cluster agreement**:
+
+$$
+\max_{\Pi} \sum_{C \in \Pi} \sum_{\substack{i,j \in C \\ i < j}} w_{ij}
+$$
+
+This objective promotes grouping assets with strong positive correlations while penalizing the inclusion of negatively correlated pairs within the same cluster. Importantly, the number of clusters $k$ is **not an input** — it is determined by the algorithm.
+

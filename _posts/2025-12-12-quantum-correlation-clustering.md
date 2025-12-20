@@ -68,3 +68,10 @@ $$
 
 These correlations define a **signed, weighted, undirected graph** $G = (V, E, w)$ where:
 - Each vertex $v_i \in V$ corresponds to asset $a_i$.
+- Each edge $(v_i, v_j) \in E$ carries the weight $w_{ij} = \rho_{ij}$.
+
+Positive edges indicate co-movement; negative edges indicate anti-correlation. Unlike classical methods, **we retain the full signed structure** of this graph.
+
+### The Clustering Objective
+
+We seek a partition $\Pi = \{C_1, C_2, \dots, C_k\}$ of $V$ into disjoint clusters that **maximizes intra-cluster agreement**:

@@ -82,3 +82,10 @@ $$
 
 This objective promotes grouping assets with strong positive correlations while penalizing the inclusion of negatively correlated pairs within the same cluster. Importantly, the number of clusters $k$ is **not an input** — it is determined by the algorithm.
 
+### The Penalty Metric
+
+Since ground-truth clusters are unavailable for real financial data, we evaluate clustering quality using the **structural balance penalty**, which penalizes two types of violations:
+
+1. **Negative intra-cluster edges**: negatively correlated assets placed in the same cluster.
+2. **Positive inter-cluster edges**: positively correlated assets placed in different clusters.
+

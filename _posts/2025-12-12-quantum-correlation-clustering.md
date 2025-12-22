@@ -89,3 +89,8 @@ Since ground-truth clusters are unavailable for real financial data, we evaluate
 1. **Negative intra-cluster edges**: negatively correlated assets placed in the same cluster.
 2. **Positive inter-cluster edges**: positively correlated assets placed in different clusters.
 
+$$
+\text{Penalty}(\Pi) = \sum_{C \in \Pi} \sum_{\substack{i,j \in C \\ i < j \\ w_{ij} < 0}} |w_{ij}| + \sum_{\substack{C_a \ne C_b}} \sum_{\substack{i \in C_a, j \in C_b \\ i < j \\ w_{ij} > 0}} w_{ij}
+$$
+
+A **lower penalty means better clustering**, with zero representing a perfectly structurally balanced partition. Clusters with low penalty are internally cohesive and externally distinct, exactly the properties desired for portfolio diversification.

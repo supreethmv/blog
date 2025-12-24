@@ -96,3 +96,10 @@ $$
 A **lower penalty means better clustering**, with zero representing a perfectly structurally balanced partition. Clusters with low penalty are internally cohesive and externally distinct, exactly the properties desired for portfolio diversification.
 
 ---
+
+## The GCS-Q Algorithm
+
+### How It Works
+
+GCS-Q follows a **top-down hierarchical divisive** strategy:
+

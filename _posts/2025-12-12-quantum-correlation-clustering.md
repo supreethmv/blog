@@ -103,3 +103,8 @@ A **lower penalty means better clustering**, with zero representing a perfectly 
 
 GCS-Q follows a **top-down hierarchical divisive** strategy:
 
+1. **Start** with all $n$ assets in a single cluster (the "grand coalition").
+2. **Bipartition** the current cluster by solving a QUBO that computes the minimum cut of the subgraph.
+3. **Check the stopping criterion**: if the cut value is non-positive (i.e., further splitting does not improve intra-cluster agreement), keep the current cluster intact. Otherwise, enqueue both partitions for further splitting.
+4. **Repeat** until no more beneficial splits exist.
+

@@ -108,3 +108,10 @@ GCS-Q follows a **top-down hierarchical divisive** strategy:
 3. **Check the stopping criterion**: if the cut value is non-positive (i.e., further splitting does not improve intra-cluster agreement), keep the current cluster intact. Otherwise, enqueue both partitions for further splitting.
 4. **Repeat** until no more beneficial splits exist.
 
+> **Algorithm: GCS-Q for Correlation Clustering**
+>
+> **Input:** Weighted graph $G = (V, E, w)$ \
+> **Output:** Clustering $\mathcal{C} = \{C_1, C_2, \dots, C_k\}$
+>
+> 1. $\mathcal{C} \leftarrow \emptyset$, $\text{Queue} \leftarrow \{V\}$
+> 2. **While** Queue is not empty:

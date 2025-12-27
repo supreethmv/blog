@@ -115,3 +115,10 @@ GCS-Q follows a **top-down hierarchical divisive** strategy:
 >
 > 1. $\mathcal{C} \leftarrow \emptyset$, $\text{Queue} \leftarrow \{V\}$
 > 2. **While** Queue is not empty:
+>    1. $S \leftarrow \text{Queue.pop}()$, $G_S \leftarrow$ subgraph induced by $S$
+>    2. Solve QUBO: $\max \sum_{i,j \in S} w_{ij} \cdot \mathbb{I}[x_i = x_j]$
+>    3. $C \leftarrow \{i \in S \mid x_i = 1\}$, $\bar{C} \leftarrow S \setminus C$
+>    4. **If** $\text{cut}(C, \bar{C}) \leq 0$ or $C = \emptyset$ or $\bar{C} = \emptyset$:
+>       - $\mathcal{C} \leftarrow \mathcal{C} \cup \{S\}$
+>    5. **Else:**
+>       - $\text{Queue} \leftarrow \text{Queue} \cup \{C, \bar{C}\}$

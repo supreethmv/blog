@@ -129,3 +129,10 @@ GCS-Q follows a **top-down hierarchical divisive** strategy:
 It is important to emphasize that the **entire clustering task is not formulated as a single QUBO**. Instead, GCS-Q solves a **sequence of independent QUBO problems**, one at each iteration of the recursive algorithm. Each QUBO corresponds to the **minimum-cut problem** on the current subgraph — i.e., finding the best way to split the nodes of that subgraph into two groups.
 
 The minimum cut on a weighted graph with $n$ nodes is itself a combinatorially hard problem. An exhaustive brute-force search would need to evaluate all $2^n$ possible binary assignments to determine which bipartition minimizes the cut. For even moderately sized subgraphs, this becomes infeasible on classical hardware — **beyond roughly $n \approx 25$ nodes, brute-force enumeration is computationally intractable**. Commercial solvers like Gurobi and CPLEX use branch-and-bound and cutting-plane heuristics to avoid full enumeration, but they too struggle on fully dense graphs (where every pair of nodes is connected), which is exactly the structure of financial correlation matrices.
+
+Given the weighted adjacency matrix $W$ of a subgraph, the QUBO matrix $Q$ for the minimum-cut problem is:
+
+$$
+Q_{ii} = \sum_{j} W_{ij} \quad (\text{diagonal: degree of node } i)
+$$
+

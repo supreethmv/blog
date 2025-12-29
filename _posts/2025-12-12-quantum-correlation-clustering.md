@@ -136,3 +136,9 @@ $$
 Q_{ii} = \sum_{j} W_{ij} \quad (\text{diagonal: degree of node } i)
 $$
 
+$$
+Q_{ij} = -W_{ij} \quad (\text{off-diagonal: negative adjacency})
+$$
+
+Binary variables $x_i \in \{0, 1\}$ indicate which side of the cut each node belongs to. Minimizing $\mathbf{x}^T Q \mathbf{x}$ yields the minimum cut, which is then used to decide whether to split the subgraph.
+

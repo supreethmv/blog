@@ -142,3 +142,10 @@ $$
 
 Binary variables $x_i \in \{0, 1\}$ indicate which side of the cut each node belongs to. Minimizing $\mathbf{x}^T Q \mathbf{x}$ yields the minimum cut, which is then used to decide whether to split the subgraph.
 
+This QUBO formulation is natively compatible with quantum annealers (D-Wave) and variational quantum algorithms (QAOA) [[4](#ref4)].
+
+### Why Quantum?
+
+Since each minimum-cut QUBO involves a solution space of $2^n$ binary assignments, and GCS-Q may solve up to $\mathcal{O}(n)$ such QUBOs (one per recursive split, as $k$ ranges over $[1, n]$), the overall classical complexity is $\mathcal{O}(n \cdot 2^n)$.
+
+The quantum annealer addresses the hard inner loop: rather than enumerating $2^n$ candidate bipartitions sequentially, it **explores all possible assignments simultaneously** via quantum superposition and tunneling. This is particularly advantageous for financial correlation graphs, which are typically **fully dense** (most pairwise correlations are non-zero), making classical heuristics and pruning strategies less effective.

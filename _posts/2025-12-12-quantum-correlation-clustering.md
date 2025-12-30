@@ -149,3 +149,7 @@ This QUBO formulation is natively compatible with quantum annealers (D-Wave) and
 Since each minimum-cut QUBO involves a solution space of $2^n$ binary assignments, and GCS-Q may solve up to $\mathcal{O}(n)$ such QUBOs (one per recursive split, as $k$ ranges over $[1, n]$), the overall classical complexity is $\mathcal{O}(n \cdot 2^n)$.
 
 The quantum annealer addresses the hard inner loop: rather than enumerating $2^n$ candidate bipartitions sequentially, it **explores all possible assignments simultaneously** via quantum superposition and tunneling. This is particularly advantageous for financial correlation graphs, which are typically **fully dense** (most pairwise correlations are non-zero), making classical heuristics and pruning strategies less effective.
+
+In other words, quantum annealing does not speed up the outer recursion (which is at most linear in $n$), but it tackles the **exponentially hard minimum-cut subproblem** at each step — the true computational bottleneck.
+
+---

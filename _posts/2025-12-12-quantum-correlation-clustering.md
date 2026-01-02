@@ -153,3 +153,11 @@ The quantum annealer addresses the hard inner loop: rather than enumerating $2^n
 In other words, quantum annealing does not speed up the outer recursion (which is at most linear in $n$), but it tackles the **exponentially hard minimum-cut subproblem** at each step — the true computational bottleneck.
 
 ---
+
+## Implementation Guide
+
+### Prerequisites
+
+- **Python 3.10+**
+- **D-Wave account** with an API token (store it in `dwave-api-token.txt`)
+

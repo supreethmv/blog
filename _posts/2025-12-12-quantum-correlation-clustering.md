@@ -168,3 +168,10 @@ git clone https://github.com/supreethmv/Quantum-Asset-Clustering.git
 cd Quantum-Asset-Clustering
 ```
 
+### Install Dependencies
+
+Use the provided `requirements.txt` to install all necessary libraries with tested, compatible versions:
+
+```bash
+pip install -r requirements.txt
+```

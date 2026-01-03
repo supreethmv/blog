@@ -161,3 +161,10 @@ In other words, quantum annealing does not speed up the outer recursion (which i
 - **Python 3.10+**
 - **D-Wave account** with an API token (store it in `dwave-api-token.txt`)
 
+### Clone the Repository
+
+```bash
+git clone https://github.com/supreethmv/Quantum-Asset-Clustering.git
+cd Quantum-Asset-Clustering
+```
+

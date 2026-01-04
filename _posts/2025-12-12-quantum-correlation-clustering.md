@@ -175,3 +175,7 @@ Use the provided `requirements.txt` to install all necessary libraries with test
 ```bash
 pip install -r requirements.txt
 ```
+
+Store your D-Wave API token in a file named `dwave-api-token.txt` in the project root.
+
+---

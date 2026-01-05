@@ -189,3 +189,13 @@ We begin by importing the libraries we need. These fall into four logical groups
 # yfinance: download historical stock price data directly from Yahoo Finance
 # pandas/numpy: data manipulation and linear algebra
 import yfinance as yf
+import pandas as pd
+import numpy as np
+
+# --- Graph & Visualization ---
+# networkx: represent the correlation matrix as a weighted signed graph
+# matplotlib/seaborn: plot penalty comparison charts
+import networkx as nx
+import time
+import matplotlib.pyplot as plt
+import seaborn as sns

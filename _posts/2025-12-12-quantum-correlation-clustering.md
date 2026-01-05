@@ -179,3 +179,13 @@ pip install -r requirements.txt
 Store your D-Wave API token in a file named `dwave-api-token.txt` in the project root.
 
 ---
+
+### Step 1: Import Dependencies
+
+We begin by importing the libraries we need. These fall into four logical groups:
+
+```python
+# --- Data & Numerics ---
+# yfinance: download historical stock price data directly from Yahoo Finance
+# pandas/numpy: data manipulation and linear algebra
+import yfinance as yf

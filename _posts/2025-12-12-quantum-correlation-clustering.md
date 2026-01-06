@@ -199,3 +199,11 @@ import networkx as nx
 import time
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+# --- Quantum (D-Wave) ---
+# DWaveSampler: interface to the physical quantum annealer
+# EmbeddingComposite: automatically maps our problem graph onto the QPU topology
+# BinaryQuadraticModel / dimod: construct and manage QUBO formulations
+from dwave.system import DWaveSampler, EmbeddingComposite
+from dimod import BinaryQuadraticModel
+import dimod

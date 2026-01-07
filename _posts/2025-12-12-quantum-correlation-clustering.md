@@ -207,3 +207,11 @@ import seaborn as sns
 from dwave.system import DWaveSampler, EmbeddingComposite
 from dimod import BinaryQuadraticModel
 import dimod
+
+# --- Linear Algebra ---
+# eigh: compute eigenvalues of symmetric matrices (used for spectral gap estimation)
+from scipy.linalg import eigh
+
+import warnings
+warnings.filterwarnings('ignore')
+```

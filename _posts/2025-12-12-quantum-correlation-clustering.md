@@ -215,3 +215,7 @@ from scipy.linalg import eigh
 import warnings
 warnings.filterwarnings('ignore')
 ```
+
+> If you are using the Gurobi solver instead of D-Wave, you can skip the `dwave.system` and `dimod` imports and instead add `import gurobipy as gp` (shown in Option B below).
+
+---

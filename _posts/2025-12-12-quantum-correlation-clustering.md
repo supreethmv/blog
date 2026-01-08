@@ -219,3 +219,11 @@ warnings.filterwarnings('ignore')
 > If you are using the Gurobi solver instead of D-Wave, you can skip the `dwave.system` and `dimod` imports and instead add `import gurobipy as gp` (shown in Option B below).
 
 ---
+
+### Step 2: Implement the GCS-Q Algorithm
+
+#### 2a. Graph Construction
+
+The first step is to convert the Pearson correlation matrix into a graph that GCS-Q can operate on. Each stock becomes a **node**, and each pairwise correlation becomes a **weighted edge**. Positive weights represent assets that tend to move together; negative weights represent assets that move in opposite directions.
+
+This graph is the foundation for everything that follows — the QUBO, the minimum cut, and ultimately the cluster assignments.

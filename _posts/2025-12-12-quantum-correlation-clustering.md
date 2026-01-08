@@ -227,3 +227,12 @@ warnings.filterwarnings('ignore')
 The first step is to convert the Pearson correlation matrix into a graph that GCS-Q can operate on. Each stock becomes a **node**, and each pairwise correlation becomes a **weighted edge**. Positive weights represent assets that tend to move together; negative weights represent assets that move in opposite directions.
 
 This graph is the foundation for everything that follows — the QUBO, the minimum cut, and ultimately the cluster assignments.
+
+```python
+def construct_graph(adj_matrix):
+    """Constructs a NetworkX graph from a signed adjacency matrix."""
+    G = nx.Graph()
+    num_nodes = len(adj_matrix)
+    for i in range(num_nodes):
+        for j in range(i + 1, num_nodes):
+            # Only add an edge if there is a non-zero correlation.

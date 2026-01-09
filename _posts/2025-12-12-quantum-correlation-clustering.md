@@ -236,3 +236,9 @@ def construct_graph(adj_matrix):
     for i in range(num_nodes):
         for j in range(i + 1, num_nodes):
             # Only add an edge if there is a non-zero correlation.
+            # For financial data, this is almost always the case
+            # (most stocks are correlated), resulting in a dense graph.
+            if adj_matrix[i][j] != 0:
+                G.add_edge(i, j, weight=adj_matrix[i][j])
+    return G
+```

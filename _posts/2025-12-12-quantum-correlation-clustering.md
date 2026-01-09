@@ -242,3 +242,6 @@ def construct_graph(adj_matrix):
                 G.add_edge(i, j, weight=adj_matrix[i][j])
     return G
 ```
+
+> **Use-case context**: For a portfolio of 50 stocks, this creates a graph with 50 nodes and up to $\binom{50}{2} = 1225$ edges. In practice, nearly all pairwise correlations are non-zero, so the graph is fully connected (dense). This density is precisely what makes the minimum-cut problem hard for classical solvers.
+

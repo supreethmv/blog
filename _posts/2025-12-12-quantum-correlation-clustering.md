@@ -254,3 +254,11 @@ We provide two solver options: the **D-Wave quantum annealer** (remote, requires
 ```python
 def get_qubo_matrix(W):
     """
+    Computes the QUBO matrix for the minimum cut problem.
+    
+    Given the weighted adjacency matrix W of a subgraph:
+      - Diagonal: Q[i,i] = sum of weights on all edges touching node i (its degree)
+      - Off-diagonal: Q[i,j] = -W[i,j] (negate the adjacency weight)
+    
+    The resulting Q encodes the minimum-cut objective:
+    minimizing x^T Q x over binary x finds the partition that

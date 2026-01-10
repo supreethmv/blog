@@ -245,3 +245,12 @@ def construct_graph(adj_matrix):
 
 > **Use-case context**: For a portfolio of 50 stocks, this creates a graph with 50 nodes and up to $\binom{50}{2} = 1225$ edges. In practice, nearly all pairwise correlations are non-zero, so the graph is fully connected (dense). This density is precisely what makes the minimum-cut problem hard for classical solvers.
 
+#### 2b. QUBO Construction and Bipartitioning
+
+This is the heart of the formulation. The QUBO encodes the **minimum-cut objective** for the current subgraph. Given the weighted adjacency matrix $W$, the QUBO matrix $Q$ is constructed, and then submitted to a solver to find the optimal bipartition.
+
+We provide two solver options: the **D-Wave quantum annealer** (remote, requires API key) and the **Gurobi classical solver** (local, requires license).
+
+```python
+def get_qubo_matrix(W):
+    """

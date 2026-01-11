@@ -262,3 +262,11 @@ def get_qubo_matrix(W):
     
     The resulting Q encodes the minimum-cut objective:
     minimizing x^T Q x over binary x finds the partition that
+    cuts through the least total positive edge weight.
+    """
+    n = W.shape[0]
+    Q = np.zeros((n, n))
+    for i in range(n):
+        # Diagonal entry: the weighted degree of node i.
+        # This represents the "cost" of placing node i on one side of the cut.
+        Q[i, i] = np.sum(W[i])

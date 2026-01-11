@@ -270,3 +270,11 @@ def get_qubo_matrix(W):
         # Diagonal entry: the weighted degree of node i.
         # This represents the "cost" of placing node i on one side of the cut.
         Q[i, i] = np.sum(W[i])
+        for j in range(n):
+            if i != j:
+                # Off-diagonal entry: the negative of the edge weight.
+                # When x_i ≠ x_j (nodes on different sides), this contributes
+                # to the objective, penalizing cutting through strong positive edges.
+                Q[i, j] = -W[i, j]
+    return Q
+```

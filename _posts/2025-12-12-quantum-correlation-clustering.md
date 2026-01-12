@@ -286,3 +286,13 @@ def get_qubo_matrix(W):
 ##### Option A: Solving on D-Wave Quantum Annealer
 
 **Note:** This requires you to have an account on [D-Wave Leap](https://cloud.dwavesys.com/). Upon logging in, the D-Wave Leap dashboard is displayed — you can find your private token on the left column under **Solver API Token**. D-Wave offers limited free access to their quantum processing units (QPUs) for new users, which is sufficient to run the experiments in this tutorial. Store your token in a file named `dwave-api-token.txt` in the project root.
+
+```python
+def bipartition(graph):
+    """
+    Bipartitions a graph using D-Wave quantum annealing.
+    Returns two partitions and the QPU access time.
+    
+    This function is called ONCE per recursive step of GCS-Q.
+    Each call submits a separate QUBO to the quantum annealer,
+    corresponding to the minimum-cut of the current subgraph.

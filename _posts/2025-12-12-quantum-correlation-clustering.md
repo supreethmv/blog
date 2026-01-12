@@ -278,3 +278,11 @@ def get_qubo_matrix(W):
                 Q[i, j] = -W[i, j]
     return Q
 ```
+
+**Why this works**: Consider the quadratic form $\mathbf{x}^T Q \mathbf{x}$ with binary variables $x_i \in \{0, 1\}$. When expanded, the terms involving $x_i (1 - x_j) w_{ij}$ accumulate the total weight of edges **crossing** the cut. Minimizing this is exactly the minimum cut — the partition that keeps strongly correlated assets together and separates anti-correlated ones.
+
+> **In financial terms**: the QUBO is asking "what is the best way to split this group of stocks into two sub-groups such that stocks within each sub-group are as positively correlated as possible?" The quantum annealer (or Gurobi) answers this question at each step of the algorithm.
+
+##### Option A: Solving on D-Wave Quantum Annealer
+
+**Note:** This requires you to have an account on [D-Wave Leap](https://cloud.dwavesys.com/). Upon logging in, the D-Wave Leap dashboard is displayed — you can find your private token on the left column under **Solver API Token**. D-Wave offers limited free access to their quantum processing units (QPUs) for new users, which is sufficient to run the experiments in this tutorial. Store your token in a file named `dwave-api-token.txt` in the project root.

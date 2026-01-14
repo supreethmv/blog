@@ -296,3 +296,13 @@ def bipartition(graph):
     This function is called ONCE per recursive step of GCS-Q.
     Each call submits a separate QUBO to the quantum annealer,
     corresponding to the minimum-cut of the current subgraph.
+    """
+    # Base case: a single node cannot be split further
+    if len(graph.nodes()) == 1:
+        return [], [0], 0
+    
+    # Extract the adjacency matrix of the current subgraph
+    # and build the QUBO matrix from it
+    w = nx.adjacency_matrix(graph).todense()
+    qubo = get_qubo_matrix(W=w)
+    

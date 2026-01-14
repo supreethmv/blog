@@ -306,3 +306,13 @@ def bipartition(graph):
     w = nx.adjacency_matrix(graph).todense()
     qubo = get_qubo_matrix(W=w)
     
+    # Convert the numpy QUBO matrix into D-Wave's BinaryQuadraticModel format.
+    # This is the standard input format for D-Wave samplers.
+    bqm = BinaryQuadraticModel.from_qubo(qubo)
+    
+    # Connect to the D-Wave cloud service.
+    # EmbeddingComposite handles the mapping from our logical QUBO variables
+    # onto the physical qubit topology (Pegasus) of the Advantage system.
+    # This embedding step is crucial: our problem graph is fully connected,
+    # but the QPU has limited physical connectivity, so multiple physical
+    # qubits may represent a single logical variable ("chain").

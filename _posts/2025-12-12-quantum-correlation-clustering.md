@@ -324,3 +324,11 @@ def bipartition(graph):
     )
     
     # Submit the QUBO to the quantum annealer.
+    # num_reads=1000 means the annealer runs 1000 independent annealing
+    # cycles (~20 microseconds each) and returns the best solution found.
+    # More reads improve robustness against hardware noise.
+    sampleset = sampler.sample(bqm, num_reads=1000)
+    
+    # Track QPU access time for benchmarking (in microseconds)
+    qpu_access_time = sampleset.info['timing']['qpu_access_time']
+    

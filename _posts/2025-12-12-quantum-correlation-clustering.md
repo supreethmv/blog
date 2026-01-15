@@ -316,3 +316,11 @@ def bipartition(graph):
     # This embedding step is crucial: our problem graph is fully connected,
     # but the QPU has limited physical connectivity, so multiple physical
     # qubits may represent a single logical variable ("chain").
+    sampler = EmbeddingComposite(
+        DWaveSampler(
+            token=open('dwave-api-token.txt', 'r').read().strip(),
+            solver={'topology__type': 'pegasus'}
+        )
+    )
+    
+    # Submit the QUBO to the quantum annealer.

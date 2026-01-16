@@ -340,3 +340,5 @@ def bipartition(graph):
     
     return partition1, partition2, qpu_access_time
 ```
+
+> **Note**: The `num_reads=1000` parameter results in 1000 independent annealing cycles, each taking roughly 20 microseconds on the QPU. The total QPU time per call is therefore about 20 ms, but network latency to the D-Wave cloud adds additional overhead.

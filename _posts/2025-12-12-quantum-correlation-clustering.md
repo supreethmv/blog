@@ -332,3 +332,11 @@ def bipartition(graph):
     # Track QPU access time for benchmarking (in microseconds)
     qpu_access_time = sampleset.info['timing']['qpu_access_time']
     
+    # The best solution is a dictionary mapping node index → binary value.
+    # Nodes assigned 1 go to partition1, nodes assigned 0 go to partition2.
+    solution = sampleset.first.sample
+    partition1 = [node for node in solution if solution[node] == 1]
+    partition2 = [node for node in solution if solution[node] == 0]
+    
+    return partition1, partition2, qpu_access_time
+```

@@ -342,3 +342,12 @@ def bipartition(graph):
 ```
 
 > **Note**: The `num_reads=1000` parameter results in 1000 independent annealing cycles, each taking roughly 20 microseconds on the QPU. The total QPU time per call is therefore about 20 ms, but network latency to the D-Wave cloud adds additional overhead.
+
+##### Option B: Solving with Gurobi (Classical)
+
+If you do not wish to run the problem on the remote quantum annealer, or do not have a D-Wave API key, you can also use the **Gurobi** solver which runs locally on your machine.
+
+```python
+import gurobipy as gp
+from gurobipy import GRB
+

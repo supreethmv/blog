@@ -351,3 +351,12 @@ If you do not wish to run the problem on the remote quantum annealer, or do not 
 import gurobipy as gp
 from gurobipy import GRB
 
+def gurobi_qubo_solver(qubo_matrix):
+    """
+    Solves a QUBO problem using Gurobi's classical optimizer.
+    
+    Gurobi uses branch-and-bound with cutting planes to solve
+    the binary quadratic program to provable optimality (or
+    near-optimality for larger instances).
+    """
+    n = qubo_matrix.shape[0]

@@ -360,3 +360,12 @@ def gurobi_qubo_solver(qubo_matrix):
     near-optimality for larger instances).
     """
     n = qubo_matrix.shape[0]
+    
+    # Create a new Gurobi optimization model
+    model = gp.Model()
+    
+    # Add n binary decision variables — one per node.
+    # x[i] = 1 means node i is in partition 1; x[i] = 0 means partition 2.
+    x = model.addVars(n, vtype=GRB.BINARY)
+    
+    # Build the quadratic objective: minimize x^T Q x

@@ -369,3 +369,11 @@ def gurobi_qubo_solver(qubo_matrix):
     x = model.addVars(n, vtype=GRB.BINARY)
     
     # Build the quadratic objective: minimize x^T Q x
+    # This is the same QUBO matrix we would send to D-Wave.
+    obj_expr = gp.quicksum(
+        qubo_matrix[i, j] * x[i] * x[j] for i in range(n) for j in range(n)
+    )
+    model.setObjective(obj_expr)
+    
+    # Suppress solver output to keep logs clean
+    model.setParam('OutputFlag', 0)

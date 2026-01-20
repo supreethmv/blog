@@ -385,3 +385,11 @@ def gurobi_qubo_solver(qubo_matrix):
         # Extract the binary solution vector
         solution = [int(x[i].X) for i in range(n)]
         binary_string = ''.join(str(bit) for bit in solution)
+        return binary_string, model.objVal
+    else:
+        return None, None
+
+def bipartition_gurobi(graph):
+    """
+    Bipartitions a graph using the Gurobi classical solver.
+    Drop-in replacement for the D-Wave bipartition function.

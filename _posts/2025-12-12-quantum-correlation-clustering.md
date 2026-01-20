@@ -377,3 +377,11 @@ def gurobi_qubo_solver(qubo_matrix):
     
     # Suppress solver output to keep logs clean
     model.setParam('OutputFlag', 0)
+    
+    # Solve — Gurobi will use branch-and-bound internally
+    model.optimize()
+    
+    if model.status == GRB.OPTIMAL:
+        # Extract the binary solution vector
+        solution = [int(x[i].X) for i in range(n)]
+        binary_string = ''.join(str(bit) for bit in solution)

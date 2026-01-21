@@ -393,3 +393,12 @@ def bipartition_gurobi(graph):
     """
     Bipartitions a graph using the Gurobi classical solver.
     Drop-in replacement for the D-Wave bipartition function.
+    """
+    if len(graph.nodes()) == 1:
+        return [], [0]
+    
+    # Same QUBO construction as the D-Wave path
+    w = nx.adjacency_matrix(graph).todense()
+    qubo = get_qubo_matrix(W=w)
+    
+    # Solve the QUBO classically

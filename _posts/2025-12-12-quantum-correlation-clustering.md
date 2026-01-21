@@ -410,3 +410,6 @@ def bipartition_gurobi(graph):
     partition2 = [node for node in solution if solution[node] == 0]
     return partition1, partition2
 ```
+
+> *Gurobi is a commercial optimization solver — it is licensed and not open source. The free version allows problems with up to 200 variables, which corresponds to the number of nodes (assets) in our case. However, if you are a student or part of an educational institution, you can obtain an academic license for non-commercial use for free. Check [this tutorial](https://www.gurobi.com/features/academic-named-user-license/) by Gurobi on how to obtain an academic license if you are a student, researcher or faculty.*
+

@@ -402,3 +402,11 @@ def bipartition_gurobi(graph):
     qubo = get_qubo_matrix(W=w)
     
     # Solve the QUBO classically
+    solution_str, objective_value = gurobi_qubo_solver(qubo)
+    
+    # Convert binary string to partition assignments
+    solution = {idx: int(bit) for idx, bit in enumerate(solution_str)}
+    partition1 = [node for node in solution if solution[node] == 1]
+    partition2 = [node for node in solution if solution[node] == 0]
+    return partition1, partition2
+```

@@ -413,3 +413,11 @@ def bipartition_gurobi(graph):
 
 > *Gurobi is a commercial optimization solver — it is licensed and not open source. The free version allows problems with up to 200 variables, which corresponds to the number of nodes (assets) in our case. However, if you are a student or part of an educational institution, you can obtain an academic license for non-commercial use for free. Check [this tutorial](https://www.gurobi.com/features/academic-named-user-license/) by Gurobi on how to obtain an academic license if you are a student, researcher or faculty.*
 
+#### 2c. The Iterative GCS-Q Algorithm
+
+The main loop processes a queue of subgraphs, recursively splitting until no beneficial cut remains. Set `qubo_solver="dwave"` to use the quantum annealer, or `qubo_solver="gurobi"` to use the classical Gurobi solver.
+
+Notice how this is a **breadth-first** process: we start with all 50 stocks in one big cluster, split it into two sub-clusters, then examine each sub-cluster to see if it should be split further, and so on. Each split solves a fresh QUBO — the algorithm may solve anywhere from 1 (if no split is beneficial) to $\mathcal{O}(n)$ QUBOs total:
+
+```python
+def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):

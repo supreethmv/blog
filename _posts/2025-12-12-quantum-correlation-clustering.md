@@ -421,3 +421,11 @@ Notice how this is a **breadth-first** process: we start with all 50 stocks in o
 
 ```python
 def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
+    """
+    Iterative GCS-Q algorithm for correlation clustering.
+    
+    Starts with all nodes in one cluster (the "grand coalition")
+    and recursively bipartitions until no further improvement is possible.
+    
+    The number of clusters k is determined AUTOMATICALLY — this is one
+    of the key advantages over classical methods like PAM and SPONGE.

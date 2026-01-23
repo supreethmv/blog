@@ -429,3 +429,11 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
     
     The number of clusters k is determined AUTOMATICALLY — this is one
     of the key advantages over classical methods like PAM and SPONGE.
+    
+    Args:
+        adj_matrix: Signed adjacency (correlation) matrix (n × n).
+        qubo_solver: "dwave" for quantum annealing, "gurobi" for classical.
+    
+    Returns:
+        CS_star: A list of lists, where each inner list contains the
+                 node indices belonging to one cluster.

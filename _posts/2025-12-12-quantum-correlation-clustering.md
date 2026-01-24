@@ -447,3 +447,13 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
     queue = [grand_coalition]  # BFS queue of subgraphs to process
     CS_star = []               # Final clustering result
     
+    while queue:
+        # Take the next subgraph from the queue
+        C = queue.pop(0)
+        subgraph = G.subgraph(C).copy()
+        
+        # ---------------------------------------------------------------
+        # CORE STEP: Solve one minimum-cut QUBO for this subgraph.
+        # This is where quantum annealing (or Gurobi) is invoked.
+        # For a subgraph with m nodes, this QUBO has m binary variables
+        # and a solution space of 2^m — the hard part.

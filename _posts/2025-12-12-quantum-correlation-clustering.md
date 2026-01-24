@@ -437,3 +437,13 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
     Returns:
         CS_star: A list of lists, where each inner list contains the
                  node indices belonging to one cluster.
+    """
+    # Build the weighted signed graph from the correlation matrix
+    G = construct_graph(adj_matrix)
+    
+    # Initialize: all nodes start in one cluster (the grand coalition).
+    # For 50 stocks, this means one group of 50.
+    grand_coalition = list(G.nodes)
+    queue = [grand_coalition]  # BFS queue of subgraphs to process
+    CS_star = []               # Final clustering result
+    

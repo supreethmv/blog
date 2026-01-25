@@ -457,3 +457,11 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
         # This is where quantum annealing (or Gurobi) is invoked.
         # For a subgraph with m nodes, this QUBO has m binary variables
         # and a solution space of 2^m — the hard part.
+        # ---------------------------------------------------------------
+        if qubo_solver == "dwave":
+            partition1, partition2, qpu_access_time = bipartition(subgraph)
+        else:
+            partition1, partition2 = bipartition_gurobi(subgraph)
+        
+        # The bipartition function returns indices relative to the subgraph.
+        # Map them back to the original node indices (stock indices).

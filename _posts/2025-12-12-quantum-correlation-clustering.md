@@ -465,3 +465,11 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
         
         # The bipartition function returns indices relative to the subgraph.
         # Map them back to the original node indices (stock indices).
+        partition1 = [C[idx] for idx in partition1]
+        partition2 = [C[idx] for idx in partition2]
+        
+        # ---------------------------------------------------------------
+        # STOPPING CRITERION (implicit in the QUBO solution):
+        # If the minimum-cut solver returns a trivial partition (one side
+        # empty), it means splitting would NOT improve intra-cluster
+        # agreement. The subgraph is finalized as a cluster.

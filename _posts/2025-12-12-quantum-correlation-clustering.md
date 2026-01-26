@@ -473,3 +473,13 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
         # If the minimum-cut solver returns a trivial partition (one side
         # empty), it means splitting would NOT improve intra-cluster
         # agreement. The subgraph is finalized as a cluster.
+        # Otherwise, both halves are enqueued for further splitting.
+        # ---------------------------------------------------------------
+        if not partition2:       # No meaningful split → finalize cluster
+            CS_star.append(partition1)
+        elif not partition1:     # Edge case (symmetric)
+            CS_star.append(partition2)
+        else:                    # Beneficial split → enqueue both halves
+            queue.append(partition1)
+            queue.append(partition2)
+    

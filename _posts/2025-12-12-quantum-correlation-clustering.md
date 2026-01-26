@@ -483,3 +483,8 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
             queue.append(partition1)
             queue.append(partition2)
     
+    return CS_star
+```
+
+**Key insight**: The stopping criterion is implicit in the minimum-cut QUBO. If the minimum cut value is non-positive (all inter-partition edges are negative or zero), the solver returns a trivial partition (one side empty), and the subgraph is finalized as a cluster. This means the algorithm **automatically determines $k$** — it keeps splitting only when doing so improves the clustering quality.
+

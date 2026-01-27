@@ -488,3 +488,5 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
 
 **Key insight**: The stopping criterion is implicit in the minimum-cut QUBO. If the minimum cut value is non-positive (all inter-partition edges are negative or zero), the solver returns a trivial partition (one side empty), and the subgraph is finalized as a cluster. This means the algorithm **automatically determines $k$** — it keeps splitting only when doing so improves the clustering quality.
 
+> **Use-case example**: On a given trading day, GCS-Q might start with all 50 stocks, split them into tech+finance vs. healthcare+energy (first QUBO), then split tech+finance into tech vs. finance (second QUBO), and so on. The algorithm terminates when every sub-cluster is internally cohesive (e.g., all energy stocks are positively correlated with each other). The final number of clusters varies by day, typically between 2 and 11.
+

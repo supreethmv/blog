@@ -500,3 +500,13 @@ To benchmark GCS-Q, we implement two classical baselines: **PAM** ($k$-Medoids) 
 
 PAM is the classical $k$-Medoids algorithm. Unlike $k$-Means (which uses cluster centroids), PAM selects actual data points as cluster representatives ("medoids") and iteratively swaps them to minimize total within-cluster distance.
 
+However, PAM requires a **distance matrix**, not a correlation matrix. We must transform correlations into distances, losing signed information in the process:
+
+```python
+def assign_clusters(distance_matrix, medoids):
+    """
+    Assign each point to the nearest medoid.
+    
+    For each stock, we check which medoid (representative stock)
+    it is closest to and assign it to that cluster.
+    """

@@ -490,3 +490,13 @@ def gcs_q_algorithm(adj_matrix, qubo_solver="dwave"):
 
 > **Use-case example**: On a given trading day, GCS-Q might start with all 50 stocks, split them into tech+finance vs. healthcare+energy (first QUBO), then split tech+finance into tech vs. finance (second QUBO), and so on. The algorithm terminates when every sub-cluster is internally cohesive (e.g., all energy stocks are positively correlated with each other). The final number of clusters varies by day, typically between 2 and 11.
 
+---
+
+### Step 3: Implement Classical Baselines
+
+To benchmark GCS-Q, we implement two classical baselines: **PAM** ($k$-Medoids) and **SPONGE**. Unlike GCS-Q, both classical methods require the number of clusters $k$ as input, so we also implement a spectral method to estimate $k$ from the data (Step 3c).
+
+#### 3a. PAM (Partitioning Around Medoids)
+
+PAM is the classical $k$-Medoids algorithm. Unlike $k$-Means (which uses cluster centroids), PAM selects actual data points as cluster representatives ("medoids") and iteratively swaps them to minimize total within-cluster distance.
+

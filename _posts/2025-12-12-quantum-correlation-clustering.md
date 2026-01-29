@@ -510,3 +510,13 @@ def assign_clusters(distance_matrix, medoids):
     For each stock, we check which medoid (representative stock)
     it is closest to and assign it to that cluster.
     """
+    clusters = [[] for _ in range(len(medoids))]
+    for i in range(distance_matrix.shape[0]):
+        distances = [distance_matrix[i, m] for m in medoids]
+        clusters[np.argmin(distances)].append(i)
+    return clusters
+
+def calculate_total_cost(distance_matrix, medoids, clusters):
+    """Total within-cluster distance (PAM's objective to minimize)."""
+    total_cost = 0
+    for medoid, cluster in zip(medoids, clusters):

@@ -520,3 +520,13 @@ def calculate_total_cost(distance_matrix, medoids, clusters):
     """Total within-cluster distance (PAM's objective to minimize)."""
     total_cost = 0
     for medoid, cluster in zip(medoids, clusters):
+        total_cost += np.sum(distance_matrix[cluster][:, medoid])
+    return total_cost
+
+def pam(distance_matrix, k, max_iter=100):
+    """
+    Partitioning Around Medoids (PAM) clustering.
+    
+    1. Randomly pick k initial medoids from the dataset.
+    2. Assign every point to its nearest medoid.
+    3. Try swapping each medoid with each non-medoid; keep the swap

@@ -540,3 +540,13 @@ def pam(distance_matrix, k, max_iter=100):
     best_medoids = medoids.copy()
     clusters = assign_clusters(distance_matrix, medoids)
     best_cost = calculate_total_cost(distance_matrix, medoids, clusters)
+
+    for _ in range(max_iter):
+        for medoid_idx in range(k):
+            # Consider swapping this medoid with every non-medoid
+            non_medoids = [i for i in range(distance_matrix.shape[0]) if i not in medoids]
+            for new_medoid in non_medoids:
+                new_medoids = medoids.copy()
+                new_medoids[medoid_idx] = new_medoid
+                new_clusters = assign_clusters(distance_matrix, new_medoids)
+                new_cost = calculate_total_cost(distance_matrix, new_medoids, new_clusters)

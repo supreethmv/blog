@@ -530,3 +530,13 @@ def pam(distance_matrix, k, max_iter=100):
     1. Randomly pick k initial medoids from the dataset.
     2. Assign every point to its nearest medoid.
     3. Try swapping each medoid with each non-medoid; keep the swap
+       if it reduces total cost.
+    4. Repeat until no swap improves the cost (convergence).
+    
+    This is a greedy local search — it finds a local optimum.
+    """
+    # Initialize with k random medoids
+    medoids = np.random.choice(distance_matrix.shape[0], k, replace=False)
+    best_medoids = medoids.copy()
+    clusters = assign_clusters(distance_matrix, medoids)
+    best_cost = calculate_total_cost(distance_matrix, medoids, clusters)

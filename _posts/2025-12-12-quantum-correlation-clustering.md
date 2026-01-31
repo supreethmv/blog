@@ -550,3 +550,11 @@ def pam(distance_matrix, k, max_iter=100):
                 new_medoids[medoid_idx] = new_medoid
                 new_clusters = assign_clusters(distance_matrix, new_medoids)
                 new_cost = calculate_total_cost(distance_matrix, new_medoids, new_clusters)
+                if new_cost < best_cost:
+                    best_cost = new_cost
+                    best_medoids = new_medoids.copy()
+                    clusters = new_clusters
+        # If no medoid changed, we've converged
+        if np.array_equal(best_medoids, medoids):
+            break
+        medoids = best_medoids.copy()

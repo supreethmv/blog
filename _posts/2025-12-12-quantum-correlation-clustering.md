@@ -558,3 +558,7 @@ def pam(distance_matrix, k, max_iter=100):
         if np.array_equal(best_medoids, medoids):
             break
         medoids = best_medoids.copy()
+    return best_medoids, clusters
+```
+
+> **Caveat**: PAM operates on a **distance matrix**, computed from correlations as $d_{ij} = \sqrt{2(1 - \rho_{ij})}$. This transformation loses signed information — a correlation of $-0.3$ and $+0.3$ both map to nonzero distances, so PAM cannot distinguish between "weakly similar" and "weakly dissimilar" stocks. This is a fundamental limitation when working with signed data.

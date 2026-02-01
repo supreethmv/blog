@@ -562,3 +562,12 @@ def pam(distance_matrix, k, max_iter=100):
 ```
 
 > **Caveat**: PAM operates on a **distance matrix**, computed from correlations as $d_{ij} = \sqrt{2(1 - \rho_{ij})}$. This transformation loses signed information — a correlation of $-0.3$ and $+0.3$ both map to nonzero distances, so PAM cannot distinguish between "weakly similar" and "weakly dissimilar" stocks. This is a fundamental limitation when working with signed data.
+
+#### 3b. SPONGE (Signed Positive Over Negative Generalized Eigenproblem)
+
+SPONGE [[7](#ref7)] is a spectral method specifically designed for signed graphs — unlike PAM, it can natively handle both positive and negative edge weights. It decomposes the adjacency matrix into positive ($A^+$) and negative ($A^-$) parts and solves a generalized eigenproblem to find cluster assignments.
+
+The idea is elegant: SPONGE finds the embedding that simultaneously **maximizes** within-cluster positive connections and **maximizes** between-cluster negative connections.
+
+```python
+from signet.cluster import Cluster

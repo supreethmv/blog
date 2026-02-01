@@ -571,3 +571,11 @@ The idea is elegant: SPONGE finds the embedding that simultaneously **maximizes*
 
 ```python
 from signet.cluster import Cluster
+from scipy.sparse import csc_matrix
+
+def sponge_clustering(adj_matrix, k, method='SPONGE'):
+    """
+    Runs SPONGE or SPONGE_sym clustering on a signed adjacency matrix.
+    
+    Steps:
+      1. Separate the correlation matrix into positive (Ap) and negative (An) parts.

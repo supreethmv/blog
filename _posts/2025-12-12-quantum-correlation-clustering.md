@@ -588,3 +588,12 @@ def sponge_clustering(adj_matrix, k, method='SPONGE'):
     
     Args:
         adj_matrix: Signed adjacency (correlation) matrix.
+        k: Number of clusters (must be provided externally).
+        method: 'SPONGE' or 'SPONGE_sym'.
+    """
+    if not isinstance(adj_matrix, np.ndarray):
+        adj_matrix = np.array(adj_matrix)
+
+    # Separate into positive and negative parts.
+    # Ap contains only the positive correlations (co-moving stocks).
+    # An contains only the magnitudes of negative correlations (opposing stocks).

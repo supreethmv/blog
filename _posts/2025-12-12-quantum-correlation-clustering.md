@@ -579,3 +579,12 @@ def sponge_clustering(adj_matrix, k, method='SPONGE'):
     
     Steps:
       1. Separate the correlation matrix into positive (Ap) and negative (An) parts.
+      2. Feed them into the signet library's Cluster class.
+      3. Solve the generalized eigenproblem to find k cluster assignments.
+    
+    SPONGE and SPONGE_sym differ in their Laplacian normalization:
+      - SPONGE: asymmetric normalization (handles unbalanced clusters)
+      - SPONGE_sym: symmetric normalization (assumes roughly equal-sized clusters)
+    
+    Args:
+        adj_matrix: Signed adjacency (correlation) matrix.

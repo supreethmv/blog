@@ -597,3 +597,12 @@ def sponge_clustering(adj_matrix, k, method='SPONGE'):
     # Separate into positive and negative parts.
     # Ap contains only the positive correlations (co-moving stocks).
     # An contains only the magnitudes of negative correlations (opposing stocks).
+    Ap = csc_matrix(np.maximum(0, adj_matrix))    # Positive edges
+    An = csc_matrix(np.maximum(0, -adj_matrix))   # Negative edges (sign flipped)
+
+    # The signet library expects sparse matrices for Ap and An
+    cluster_model = Cluster((Ap, An))
+    if method == 'SPONGE':
+        predictions = cluster_model.SPONGE(k=k)
+    elif method == 'SPONGE_sym':
+        predictions = cluster_model.SPONGE_sym(k=k)

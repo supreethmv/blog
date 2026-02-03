@@ -606,3 +606,11 @@ def sponge_clustering(adj_matrix, k, method='SPONGE'):
         predictions = cluster_model.SPONGE(k=k)
     elif method == 'SPONGE_sym':
         predictions = cluster_model.SPONGE_sym(k=k)
+
+    # Convert prediction labels into a list-of-lists format
+    # matching the output format of GCS-Q and PAM
+    output_clusters = [[] for _ in range(len(np.unique(predictions)))]
+    for idx, cid in enumerate(predictions):
+        output_clusters[cid].append(idx)
+    return output_clusters
+```

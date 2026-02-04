@@ -614,3 +614,5 @@ def sponge_clustering(adj_matrix, k, method='SPONGE'):
         output_clusters[cid].append(idx)
     return output_clusters
 ```
+
+> **Limitation**: SPONGE was originally designed for **sparse** graphs with edge weights in $\{-1, 0, +1\}$ and **balanced** cluster sizes. Financial correlation matrices violate both assumptions — they are fully dense with continuous weights in $[-1, +1]$, and sector sizes are inherently unequal (e.g., 8 tech stocks vs. 3 utility stocks). This explains why SPONGE underperforms GCS-Q on financial data.

@@ -625,3 +625,12 @@ In practice, the dual Laplacian captures the block structure of the correlation 
 
 ```python
 def basic_laplacian(A, normalize=True):
+    """
+    Compute the (normalized) graph Laplacian L = D - A.
+    
+    D is the diagonal degree matrix (sum of each row).
+    Normalization: L_norm = D^{-1/2} L D^{-1/2}, which scales
+    the Laplacian so that eigenvalues fall in [0, 2].
+    """
+    D = np.diag(np.sum(A, axis=1))
+    L = D - A

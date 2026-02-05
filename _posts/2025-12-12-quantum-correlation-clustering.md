@@ -616,3 +616,12 @@ def sponge_clustering(adj_matrix, k, method='SPONGE'):
 ```
 
 > **Limitation**: SPONGE was originally designed for **sparse** graphs with edge weights in $\{-1, 0, +1\}$ and **balanced** cluster sizes. Financial correlation matrices violate both assumptions — they are fully dense with continuous weights in $[-1, +1]$, and sector sizes are inherently unequal (e.g., 8 tech stocks vs. 3 utility stocks). This explains why SPONGE underperforms GCS-Q on financial data.
+
+#### 3c. Estimating $k$
+
+As noted above, both PAM and SPONGE require $k$ as input but cannot determine it on their own. We estimate it using the **eigengap heuristic** applied to the dual Laplacian of the signed graph. The dual Laplacian combines information from both positive and negative subgraphs, and the largest gap between consecutive eigenvalues indicates the most natural number of clusters.
+
+In practice, the dual Laplacian captures the block structure of the correlation matrix: if there are $k$ well-separated clusters, the first $k$ eigenvalues will be small and closely spaced, followed by a sharp jump (the "spectral gap") to the $(k+1)$-th eigenvalue.
+
+```python
+def basic_laplacian(A, normalize=True):

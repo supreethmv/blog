@@ -634,3 +634,12 @@ def basic_laplacian(A, normalize=True):
     """
     D = np.diag(np.sum(A, axis=1))
     L = D - A
+    if normalize:
+        with np.errstate(divide='ignore'):
+            D_inv_sqrt = np.diag(1.0 / np.sqrt(np.sum(A, axis=1)))
+            D_inv_sqrt[np.isinf(D_inv_sqrt)] = 0.0
+        L = D_inv_sqrt @ L @ D_inv_sqrt
+    return L
+
+def dual_laplacian(adj_matrix):
+    """

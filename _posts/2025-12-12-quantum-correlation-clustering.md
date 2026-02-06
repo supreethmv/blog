@@ -643,3 +643,12 @@ def basic_laplacian(A, normalize=True):
 
 def dual_laplacian(adj_matrix):
     """
+    Compute a combined (dual) Laplacian for signed graphs.
+    
+    Separates the signed adjacency matrix into:
+      - A_pos: only the positive edges (stocks that move together)
+      - A_neg: only the negative edges (stocks that move oppositely)
+    
+    The dual Laplacian L_pos + L_neg encodes both types of structure,
+    enabling spectral methods to detect clusters in signed graphs.
+    """

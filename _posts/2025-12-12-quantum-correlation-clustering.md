@@ -652,3 +652,12 @@ def dual_laplacian(adj_matrix):
     The dual Laplacian L_pos + L_neg encodes both types of structure,
     enabling spectral methods to detect clusters in signed graphs.
     """
+    A_pos = np.clip(adj_matrix, 0, 1)      # Keep only positive correlations
+    A_neg = -np.clip(adj_matrix, -1, 0)     # Flip sign of negatives (→ positive)
+    L_pos = basic_laplacian(A_pos, normalize=True)
+    L_neg = basic_laplacian(A_neg, normalize=True)
+    return L_pos + L_neg
+
+def spectral_gap_method(eigenvalues, max_k, skip=2):
+    """
+    Finds k by locating the largest gap in the sorted eigenvalue spectrum.

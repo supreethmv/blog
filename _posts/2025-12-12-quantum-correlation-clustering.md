@@ -661,3 +661,13 @@ def dual_laplacian(adj_matrix):
 def spectral_gap_method(eigenvalues, max_k, skip=2):
     """
     Finds k by locating the largest gap in the sorted eigenvalue spectrum.
+    
+    We skip the first few eigenvalues (typically noise/trivially small).
+    The position of the largest gap tells us how many natural clusters exist.
+    
+    Example: eigenvalues = [0.01, 0.03, 0.05, 0.52, 0.9, ...]
+             Largest gap is between 0.05 and 0.52 → k = 3.
+    """
+    diffs = np.diff(eigenvalues[skip:max_k + skip])
+    return np.argmax(diffs) + 1 + skip
+```

@@ -671,3 +671,6 @@ def spectral_gap_method(eigenvalues, max_k, skip=2):
     diffs = np.diff(eigenvalues[skip:max_k + skip])
     return np.argmax(diffs) + 1 + skip
 ```
+
+> **Note**: This step is only needed for the classical baselines. GCS-Q determines $k$ automatically as part of its optimization.
+

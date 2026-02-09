@@ -683,3 +683,13 @@ How do we objectively compare clustering results across different algorithms? We
 - All **negative** correlations (opposing stocks) **between** different clusters
 
 Any violation of these two rules incurs a penalty:
+
+```python
+from itertools import combinations
+
+def penalty_metric(adj_matrix, clusters):
+    """
+    Computes structural balance penalty for a given clustering.
+    
+    Two types of violations are penalized:
+    

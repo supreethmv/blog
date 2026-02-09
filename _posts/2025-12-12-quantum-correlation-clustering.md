@@ -674,3 +674,12 @@ def spectral_gap_method(eigenvalues, max_k, skip=2):
 
 > **Note**: This step is only needed for the classical baselines. GCS-Q determines $k$ automatically as part of its optimization.
 
+---
+
+### Step 4: Define the Evaluation Metric
+
+How do we objectively compare clustering results across different algorithms? We use the **structural balance penalty** — a metric directly aligned with the correlation clustering objective. A perfect clustering would have:
+- All **positive** correlations (co-moving stocks) **within** the same cluster
+- All **negative** correlations (opposing stocks) **between** different clusters
+
+Any violation of these two rules incurs a penalty:

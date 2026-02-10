@@ -693,3 +693,13 @@ def penalty_metric(adj_matrix, clusters):
     
     Two types of violations are penalized:
     
+    1. NEGATIVE intra-cluster edges: Two stocks in the SAME cluster have
+       a negative correlation. This is bad — they move in opposite
+       directions and should not be grouped together.
+       Penalty contribution: |w_ij| (magnitude of the negative correlation)
+    
+    2. POSITIVE inter-cluster edges: Two stocks in DIFFERENT clusters have
+       a positive correlation. This is also bad — they co-move and should
+       be in the same cluster.
+       Penalty contribution: w_ij (the positive correlation value)
+    

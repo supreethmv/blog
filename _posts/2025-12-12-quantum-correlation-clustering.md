@@ -703,3 +703,13 @@ def penalty_metric(adj_matrix, clusters):
        be in the same cluster.
        Penalty contribution: w_ij (the positive correlation value)
     
+    Lower is better. Zero = perfectly balanced clustering.
+    """
+    penalty = 0
+    
+    # Check for negative edges WITHIN each cluster
+    # (stocks that are anti-correlated but grouped together)
+    for cluster in clusters:
+        for i, j in combinations(cluster, 2):
+            if adj_matrix[i, j] < 0:
+                penalty += abs(adj_matrix[i, j])

@@ -713,3 +713,13 @@ def penalty_metric(adj_matrix, clusters):
         for i, j in combinations(cluster, 2):
             if adj_matrix[i, j] < 0:
                 penalty += abs(adj_matrix[i, j])
+    
+    # Check for positive edges BETWEEN different clusters
+    # (stocks that co-move but are placed in separate clusters)
+    for i in range(len(adj_matrix)):
+        for j in range(len(adj_matrix)):
+            if i != j and adj_matrix[i, j] > 0:
+                in_same_cluster = any(i in c and j in c for c in clusters)
+                if not in_same_cluster:
+                    penalty += adj_matrix[i, j]
+    

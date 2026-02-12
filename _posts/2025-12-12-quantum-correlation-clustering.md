@@ -729,3 +729,14 @@ def penalty_metric(adj_matrix, clusters):
 > **Interpretation**: If GCS-Q achieves a penalty of 5.2 and PAM achieves 18.7 on the same day, GCS-Q's clustering has far fewer structural violations — it does a better job of keeping correlated stocks together and separating anti-correlated ones. For portfolio construction, this means GCS-Q's clusters more faithfully represent the true co-movement structure of the market.
 
 ---
+
+### Step 5: Fetch Data and Run the Pipeline
+
+#### 5a. Define Stock Tickers
+
+We select 50 stocks spanning diverse sectors to ensure a rich and realistic correlation structure. The diversity is key — stocks within the same sector (e.g., all tech stocks) tend to be positively correlated, while stocks across sectors (e.g., tech vs. energy) may be negatively correlated. This creates the signed graph structure that GCS-Q is designed to exploit:
+
+```python
+tickers = [
+    # Technology (8 stocks)
+    'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'NVDA', 'INTC', 'CSCO',

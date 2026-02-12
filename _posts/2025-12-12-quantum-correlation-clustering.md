@@ -727,3 +727,5 @@ def penalty_metric(adj_matrix, clusters):
 ```
 
 > **Interpretation**: If GCS-Q achieves a penalty of 5.2 and PAM achieves 18.7 on the same day, GCS-Q's clustering has far fewer structural violations — it does a better job of keeping correlated stocks together and separating anti-correlated ones. For portfolio construction, this means GCS-Q's clusters more faithfully represent the true co-movement structure of the market.
+
+---

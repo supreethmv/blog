@@ -740,3 +740,13 @@ We select 50 stocks spanning diverse sectors to ensure a rich and realistic corr
 tickers = [
     # Technology (8 stocks)
     'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'NVDA', 'INTC', 'CSCO',
+    # Finance (6 stocks)
+    'JPM', 'GS', 'BAC', 'WFC', 'C', 'MS',
+    # Healthcare (6 stocks)
+    'JNJ', 'PFE', 'MRK', 'ABBV', 'MRNA', 'BMY',
+    # Energy (6 stocks)
+    'XOM', 'CVX', 'COP', 'SLB', 'HAL', 'OXY',
+    # Consumer Discretionary (6 stocks)
+    'HD', 'MCD', 'NKE', 'SBUX', 'TGT', 'DIS',
+    # Consumer Staples (6 stocks)
+    'PG', 'KO', 'PEP', 'WMT', 'COST', 'MDLZ',

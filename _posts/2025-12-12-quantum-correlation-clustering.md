@@ -750,3 +750,9 @@ tickers = [
     'HD', 'MCD', 'NKE', 'SBUX', 'TGT', 'DIS',
     # Consumer Staples (6 stocks)
     'PG', 'KO', 'PEP', 'WMT', 'COST', 'MDLZ',
+    # Industrials (6 stocks)
+    'BA', 'GE', 'UNP', 'MMM', 'CAT', 'HON',
+    # Utilities & Telecom (6 stocks)
+    'NEE', 'DUK', 'SO', 'EXC', 'VZ', 'T'
+]
+```

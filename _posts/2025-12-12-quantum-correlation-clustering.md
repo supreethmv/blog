@@ -756,3 +756,11 @@ tickers = [
     'NEE', 'DUK', 'SO', 'EXC', 'VZ', 'T'
 ]
 ```
+
+#### 5b. Download and Process Returns
+
+We use a **rolling daily window** approach: for each business day in January 2025, we download hourly intraday price data, compute log returns, and build that day's correlation matrix. This simulates how a portfolio manager would re-cluster assets each day based on the latest intraday co-movement patterns:
+
+```python
+from datetime import datetime, timedelta
+

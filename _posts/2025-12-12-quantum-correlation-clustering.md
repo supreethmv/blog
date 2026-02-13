@@ -764,3 +764,13 @@ We use a **rolling daily window** approach: for each business day in January 202
 ```python
 from datetime import datetime, timedelta
 
+def generate_days(global_start, global_end):
+    """Generate a list of consecutive calendar dates.
+    Weekends and holidays are handled later by checking data availability."""
+    days = []
+    current = global_start
+    while current <= global_end:
+        days.append(current)
+        current += timedelta(days=1)
+    return days
+

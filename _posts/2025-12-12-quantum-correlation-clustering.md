@@ -807,3 +807,15 @@ for i, date in enumerate(days[:-1]):
         df = df.replace([np.inf, -np.inf], np.nan).dropna(axis=1, how='any')
         if df.shape[1] < 10:
             continue  # Skip weekends/holidays (insufficient data points)
+
+        # ---------------------------------------------------------------
+        # STEP B: Compute percentage returns and the Pearson correlation matrix.
+        # This correlation matrix IS the signed adjacency matrix for our graph.
+        # Values range from -1 (perfectly anti-correlated) to +1 (perfectly correlated).
+        # ---------------------------------------------------------------
+        returns_df = df.pct_change().dropna()
+        corr_matrix_np = returns_df.corr().values
+        adj_matrix = corr_matrix_np.copy()
+
+        # ---------------------------------------------------------------
+        # STEP C: Estimate k for the classical baselines.

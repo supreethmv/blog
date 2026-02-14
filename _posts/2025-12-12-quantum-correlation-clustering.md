@@ -795,3 +795,15 @@ interval = '1h'  # Hourly data gives us ~7 data points per day per stock
 
 for i, date in enumerate(days[:-1]):
     try:
+        start_date = date.strftime('%Y-%m-%d')
+        end_date = days[i + 1].strftime('%Y-%m-%d')
+        print(f"Processing: {start_date} to {end_date}")
+
+        # ---------------------------------------------------------------
+        # STEP A: Download hourly closing prices from Yahoo Finance.
+        # We download one day at a time to build a daily correlation snapshot.
+        # ---------------------------------------------------------------
+        df = yf.download(tickers, start=start_date, end=end_date, interval=interval)['Close']
+        df = df.replace([np.inf, -np.inf], np.nan).dropna(axis=1, how='any')
+        if df.shape[1] < 10:
+            continue  # Skip weekends/holidays (insufficient data points)

@@ -784,3 +784,14 @@ days = generate_days(global_start, global_end)
 
 This loop downloads hourly return data for each business day, computes the correlation matrix, and runs all four algorithms. Each iteration represents **one trading day** — we build a fresh correlation matrix from that day's intraday data and cluster accordingly:
 
+```python
+algo_names = ["gcsq", "pam", "sponge", "sponge_sym"]
+penalty_results = {algo: [] for algo in algo_names}
+for algo in algo_names:
+    penalty_results[algo + "_k"] = []   # Track the number of clusters per algo
+penalty_results["date"] = []             # Track which dates were processed
+
+interval = '1h'  # Hourly data gives us ~7 data points per day per stock
+
+for i, date in enumerate(days[:-1]):
+    try:

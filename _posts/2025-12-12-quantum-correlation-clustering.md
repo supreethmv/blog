@@ -774,3 +774,13 @@ def generate_days(global_start, global_end):
         current += timedelta(days=1)
     return days
 
+# Define the evaluation period: January 2025
+global_start = datetime(2025, 1, 1)
+global_end = datetime(2025, 2, 1)
+days = generate_days(global_start, global_end)
+```
+
+#### 5c. Run All Algorithms Over a Rolling Window
+
+This loop downloads hourly return data for each business day, computes the correlation matrix, and runs all four algorithms. Each iteration represents **one trading day** — we build a fresh correlation matrix from that day's intraday data and cluster accordingly:
+

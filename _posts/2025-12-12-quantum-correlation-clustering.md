@@ -819,3 +819,15 @@ for i, date in enumerate(days[:-1]):
 
         # ---------------------------------------------------------------
         # STEP C: Estimate k for the classical baselines.
+        # GCS-Q does NOT need this — it determines k automatically.
+        # ---------------------------------------------------------------
+        L_dual = dual_laplacian(adj_matrix)
+        eigvals, _ = eigh(L_dual)
+        k = spectral_gap_method(eigvals, adj_matrix.shape[0])
+
+        # ---------------------------------------------------------------
+        # STEP D: Run GCS-Q (quantum annealer).
+        # This is the main algorithm — it does NOT need k as input.
+        # ---------------------------------------------------------------
+        clusters_gcsq = gcs_q_algorithm(adj_matrix, qubo_solver="dwave")
+        penalty_results["gcsq"].append(penalty_metric(adj_matrix, clusters_gcsq))

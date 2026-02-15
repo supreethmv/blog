@@ -843,3 +843,15 @@ for i, date in enumerate(days[:-1]):
         _, clusters_pam = pam(dist_matrix, k=k)
         penalty_results["pam"].append(penalty_metric(adj_matrix, clusters_pam))
         penalty_results["pam_k"].append(len(clusters_pam))
+
+        # ---------------------------------------------------------------
+        # STEP F: Run SPONGE and SPONGE_sym with the estimated k.
+        # Both are spectral methods for signed graphs.
+        # ---------------------------------------------------------------
+        clusters_sp = sponge_clustering(adj_matrix, k, method='SPONGE')
+        penalty_results["sponge"].append(penalty_metric(adj_matrix, clusters_sp))
+        penalty_results["sponge_k"].append(len(clusters_sp))
+
+        clusters_ss = sponge_clustering(adj_matrix, k, method='SPONGE_sym')
+        penalty_results["sponge_sym"].append(penalty_metric(adj_matrix, clusters_ss))
+        penalty_results["sponge_sym_k"].append(len(clusters_ss))

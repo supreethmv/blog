@@ -862,3 +862,6 @@ for i, date in enumerate(days[:-1]):
         print(f"Error on {start_date}: {e}")
         continue
 ```
+
+> **What this produces**: After the loop completes, `penalty_results` contains the structural balance penalty and cluster count for each algorithm on each trading day. This lets us directly compare how well each method respects the signed correlation structure.
+

@@ -855,3 +855,10 @@ for i, date in enumerate(days[:-1]):
         clusters_ss = sponge_clustering(adj_matrix, k, method='SPONGE_sym')
         penalty_results["sponge_sym"].append(penalty_metric(adj_matrix, clusters_ss))
         penalty_results["sponge_sym_k"].append(len(clusters_ss))
+
+        penalty_results["date"].append(start_date)
+
+    except Exception as e:
+        print(f"Error on {start_date}: {e}")
+        continue
+```

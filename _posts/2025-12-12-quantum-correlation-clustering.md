@@ -831,3 +831,15 @@ for i, date in enumerate(days[:-1]):
         # ---------------------------------------------------------------
         clusters_gcsq = gcs_q_algorithm(adj_matrix, qubo_solver="dwave")
         penalty_results["gcsq"].append(penalty_metric(adj_matrix, clusters_gcsq))
+        penalty_results["gcsq_k"].append(len(clusters_gcsq))
+
+        # ---------------------------------------------------------------
+        # STEP E: Run PAM (k-Medoids) with the estimated k.
+        # We must first convert correlations to distances.
+        # d_ij = sqrt(2 * (1 - rho_ij)), with alpha=2 as scaling factor.
+        # ---------------------------------------------------------------
+        alpha = 2
+        dist_matrix = np.sqrt(alpha * (1 - adj_matrix.clip(min=-1, max=1)))
+        _, clusters_pam = pam(dist_matrix, k=k)
+        penalty_results["pam"].append(penalty_metric(adj_matrix, clusters_pam))
+        penalty_results["pam_k"].append(len(clusters_pam))

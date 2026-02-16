@@ -899,3 +899,7 @@ plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=4, fontsize=28,
 plt.savefig('clustering_penalties.png', bbox_inches='tight', dpi=300)
 plt.show()
 ```
+
+![Results](/assets/img/correlation-clustering/real-data-experiments_28_0.png)
+*Penalty comparison across clustering algorithms over business days in January 2025 [[1](#ref1)]*
+

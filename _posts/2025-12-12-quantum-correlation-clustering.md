@@ -882,3 +882,11 @@ markers = {'gcsq': 'X', 'pam': 's', 'sponge': 'o', 'sponge_sym': '^'}
 colors  = {'gcsq': '#2ca02c', 'pam': '#ff7f0e', 'sponge': '#1f77b4', 'sponge_sym': '#d62728'}
 
 for algo in algo_names:
+    formatted_dates = pd.to_datetime(penalty_df['date']).dt.strftime('%d')
+    sns.lineplot(
+        x=formatted_dates, y=penalty_df[algo],
+        label=algo.upper(), marker=markers[algo],
+        linewidth=4, alpha=0.85, color=colors[algo]
+    )
+    plt.setp(plt.gca().lines[-1], markersize=14)
+

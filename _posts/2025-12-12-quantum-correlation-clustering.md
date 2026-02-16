@@ -874,3 +874,11 @@ Finally, we plot the penalty over time for all four algorithms. Each point on th
 ```python
 penalty_df = pd.DataFrame(penalty_results)
 
+plt.figure(figsize=(14, 7))
+sns.set(style="whitegrid", font_scale=1.3)
+
+# Distinct markers and colors for each algorithm
+markers = {'gcsq': 'X', 'pam': 's', 'sponge': 'o', 'sponge_sym': '^'}
+colors  = {'gcsq': '#2ca02c', 'pam': '#ff7f0e', 'sponge': '#1f77b4', 'sponge_sym': '#d62728'}
+
+for algo in algo_names:

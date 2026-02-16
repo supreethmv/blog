@@ -890,3 +890,12 @@ for algo in algo_names:
     )
     plt.setp(plt.gca().lines[-1], markersize=14)
 
+plt.xlabel('Dates (January 2025)', fontsize=24)
+plt.ylabel('Penalty', fontsize=28)         # Lower = better clustering
+plt.xticks(rotation=0, fontsize=22)
+plt.yticks(fontsize=22)
+plt.tight_layout()
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=4, fontsize=28, frameon=True)
+plt.savefig('clustering_penalties.png', bbox_inches='tight', dpi=300)
+plt.show()
+```

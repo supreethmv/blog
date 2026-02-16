@@ -865,3 +865,12 @@ for i, date in enumerate(days[:-1]):
 
 > **What this produces**: After the loop completes, `penalty_results` contains the structural balance penalty and cluster count for each algorithm on each trading day. This lets us directly compare how well each method respects the signed correlation structure.
 
+---
+
+### Step 6: Visualize the Results
+
+Finally, we plot the penalty over time for all four algorithms. Each point on the x-axis is one business day; the y-axis shows how much each algorithm's clustering violates the ideal structural balance. Lower curves indicate better-quality clusterings:
+
+```python
+penalty_df = pd.DataFrame(penalty_results)
+

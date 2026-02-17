@@ -903,3 +903,33 @@ plt.show()
 ![Results](/assets/img/correlation-clustering/real-data-experiments_28_0.png)
 *Penalty comparison across clustering algorithms over business days in January 2025 [[1](#ref1)]*
 
+---
+
+## Results and Discussion
+
+The results demonstrate clear advantages of GCS-Q over classical baselines:
+
+- **GCS-Q consistently achieves the lowest penalty** across nearly all trading days, often by a large margin. On some days, GCS-Q's penalty is an order of magnitude lower than PAM's.
+
+- **PAM performs worst overall**, which is expected since it relies on the lossy distance transformation and a centroid-based objective that does not align with the correlation clustering goal.
+
+- **SPONGE and SPONGE_sym** perform moderately, benefiting from their ability to handle signed graphs. However, they struggle because they are designed for sparse graphs with weights in $\{-1, 0, +1\}$ and balanced cluster sizes — conditions rarely met in financial correlation data with continuous weights and heterogeneous cluster structures.
+
+- **GCS-Q determines $k$ dynamically**, typically finding 2–11 clusters depending on the day's correlation structure, while the classical methods are constrained to the $k$ estimated by the spectral gap heuristic.
+
+### Why Does GCS-Q Win?
+
+1. **No information loss**: GCS-Q works directly on the signed correlation matrix without any distance transformation.
+2. **Exponential search space**: At each bipartition step, the quantum annealer explores $\mathcal{O}(2^n)$ possible binary assignments simultaneously.
+3. **Autonomous $k$ selection**: The stopping criterion automatically identifies when further splitting would reduce clustering quality.
+4. **Robustness to heterogeneous cluster sizes**: Unlike classical methods that assume approximately equal-sized clusters, GCS-Q handles skewed distributions naturally.
+
+### Hardware Details
+
+The QUBO subproblems are solved on the **D-Wave Advantage_system5.4** annealer, which comprises **5,614 physical qubits** and **40,050 couplers** arranged in a Pegasus topology. Despite hardware noise and cloud latency (the dominant bottleneck due to remote access), GCS-Q delivers superior solution quality. Clustering 50 assets takes approximately a few minutes, with per-QUBO solve times capped at 1 second.
+
+### Scalability
+
+GCS-Q has been validated on up to **170 fully connected assets** with $k=10$ — the practical limit for fully dense graphs on current D-Wave hardware. Sparser correlation structures would allow scaling to even larger portfolios. Future hardware topologies (e.g., D-Wave Zephyr with higher connectivity) are expected to push this limit further.
+
+---

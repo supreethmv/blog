@@ -933,3 +933,23 @@ The QUBO subproblems are solved on the **D-Wave Advantage_system5.4** annealer, 
 GCS-Q has been validated on up to **170 fully connected assets** with $k=10$ — the practical limit for fully dense graphs on current D-Wave hardware. Sparser correlation structures would allow scaling to even larger portfolios. Future hardware topologies (e.g., D-Wave Zephyr with higher connectivity) are expected to push this limit further.
 
 ---
+
+## Broader Context
+
+This work is presented in two complementary papers:
+
+- **QUEST-IS 2025** [[1](#ref1)]: Focuses on the **financial application** — asset clustering using real Yahoo Finance data. Demonstrates that GCS-Q outperforms PAM, SPONGE, and SPONGE_sym in terms of structural balance penalty on real stock data.
+
+- **IEEE QAI 2025** [[2](#ref2)]: Provides the **general correlation clustering framework**, adapting GCS-Q for arbitrary signed graphs. Benchmarks against $k$-Means, PAM, DIANA, Spectral, and Hierarchical clustering on synthetic balanced graphs and real hyperspectral remote sensing data.
+
+Together, these works demonstrate that **GCS-Q achieves quantum advantage in solution quality** using real quantum hardware, validated on both synthetic and real-world datasets. This marks a concrete step toward near-term quantum utility for graph-based unsupervised learning.
+
+---
+
+## Conclusion
+
+Classical clustering methods were designed for a world of positive-definite distances and spherical clusters. Financial correlation matrices do not live in that world — they are signed, dense, and rarely structurally balanced. GCS-Q bridges this gap by formulating clustering as recursive minimum-cut optimization on the native signed graph, leveraging quantum annealing to explore the exponentially large solution space efficiently.
+
+If you work with correlation-based data — whether in finance, bioinformatics, or remote sensing — this pipeline offers a principled, quantum-enhanced alternative to classical heuristics. The code is [open-source](https://github.com/supreethmv/Quantum-Asset-Clustering) and ready to run.
+
+---

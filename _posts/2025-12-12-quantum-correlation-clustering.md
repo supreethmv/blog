@@ -953,3 +953,21 @@ Classical clustering methods were designed for a world of positive-definite dist
 If you work with correlation-based data — whether in finance, bioinformatics, or remote sensing — this pipeline offers a principled, quantum-enhanced alternative to classical heuristics. The code is [open-source](https://github.com/supreethmv/Quantum-Asset-Clustering) and ready to run.
 
 ---
+
+## 📄 References
+
+##### <span id="ref1"></span> [1] S. Sharma, S. M. Venkatesh, and P. Kachroo, "Toward Quantum Utility in Finance: A Robust Data-Driven Algorithm for Asset Clustering," in *Quantum Engineering Sciences and Technologies for Industry and Services (QUEST-IS 2025)*, F. Barbaresco and F. Gerin (eds), Communications in Computer and Information Science, vol. 2744. Springer, Cham, 2026, pp. 15–27. DOI: [10.1007/978-3-032-13855-2_2](https://doi.org/10.1007/978-3-032-13855-2_2), [arXiv:2509.07766](https://arxiv.org/abs/2509.07766)
+
+##### <span id="ref2"></span> [2] A. Macaluso, S. M. Venkatesh, D. Arenas, M. Klusch, and A. Dengel, "Quantum-Assisted Correlation Clustering," 2025 IEEE International Conference on Quantum Artificial Intelligence (QAI), Naples, Italy, 2025, pp. 7–12. DOI: [10.1109/QAI63978.2025.00009](https://doi.org/10.1109/QAI63978.2025.00009), [arXiv:2509.03561](https://arxiv.org/abs/2509.03561)
+
+##### <span id="ref3"></span> [3] S. M. Venkatesh, A. Macaluso, and M. Klusch, "GCS-Q: Quantum Graph Coalition Structure Generation," in *Computational Science – ICCS 2023*, J. Mikyška, C. de Mulatier, M. Paszynski, V. V. Krzhizhanovskaya, J. J. Dongarra, and P. M. Sloot (eds), Lecture Notes in Computer Science, vol. 14077. Springer, Cham, 2023, pp. 138–152. DOI: [10.1007/978-3-031-36030-5_11](https://doi.org/10.1007/978-3-031-36030-5_11), [arXiv:2212.11372](https://arxiv.org/abs/2212.11372)
+
+##### <span id="ref4"></span> [4] S. M. Venkatesh, A. Macaluso, M. Nuske, M. Klusch, and A. Dengel, "Qubit-Efficient Variational Quantum Algorithms for Image Segmentation," 2024 IEEE International Conference on Quantum Computing and Engineering (QCE), Montreal, QC, Canada, 2024, pp. 450–456. DOI: [10.1109/QCE60285.2024.00059](https://doi.org/10.1109/QCE60285.2024.00059), [arXiv:2405.14405](https://arxiv.org/abs/2405.14405)
+
+##### <span id="ref5"></span> [5] H. Markowitz, "Portfolio Selection," *Journal of Finance*, vol. 7, no. 1, pp. 77–91, 1952. DOI: [10.1111/j.1540-6261.1952.tb01525.x](https://doi.org/10.1111/j.1540-6261.1952.tb01525.x)
+
+##### <span id="ref6"></span> [6] W. K. Bertram, "Analytic Solutions for Optimal Statistical Arbitrage Trading," *Physica A: Statistical Mechanics and its Applications*, vol. 389, no. 11, pp. 2234–2243, 2010. DOI: [10.1016/j.physa.2010.01.045](https://doi.org/10.1016/j.physa.2010.01.045)
+
+##### <span id="ref7"></span> [7] M. Cucuringu, P. Davies, A. Glielmo, and H. Tyagi, "SPONGE: A Generalized Eigenproblem for Clustering Signed Networks," in *Proceedings of the Twenty-Second International Conference on Artificial Intelligence and Statistics (AISTATS)*, K. Chaudhuri and M. Sugiyama (eds), Proceedings of Machine Learning Research, vol. 89. PMLR, 2019, pp. 1088–1098. [URL](https://proceedings.mlr.press/v89/cucuringu19a.html)
+
+##### <span id="ref8"></span> [8] S. M. Venkatesh, A. Macaluso, M. Nuske, M. Klusch, and A. Dengel, "Q-Seg: Quantum Annealing-Based Unsupervised Image Segmentation," in *IEEE Computer Graphics and Applications*, vol. 44, no. 5, pp. 27–39, Sept.–Oct. 2024. DOI: [10.1109/MCG.2024.3455012](https://doi.org/10.1109/MCG.2024.3455012), [arXiv:2311.12912](https://arxiv.org/abs/2311.12912)
